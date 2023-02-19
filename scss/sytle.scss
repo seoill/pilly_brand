@@ -1,0 +1,387 @@
+@import url('./reset.css');
+@import url('./header.css');
+$font2 : 'Gotham';
+$white:#FFFFFF;
+$black : #000000;
+$orange:#FF5C35;
+$blue:#00A7E1;
+$green:#00B21D;
+$ivory:#FFF2DF;
+$gray:#F5F5F5;
+$darkGray:#8E8E93;
+$about_background : 1,2,3,4;
+
+@mixin tit_pretendard($weight,$size,$color,$lineHeight){
+    font-family:'Pretendard Variable';
+    font-weight:$weight; font-size:$size; color:$color; line-height: $lineHeight;
+};
+@mixin tit_gotham($weight,$size,$color,$lineHeight){
+    font-family:'Gotham';
+    font-weight:$weight; font-size:$size; color:$color; line-height: $lineHeight;
+};
+
+html{overflow: hidden;}
+main{
+    width: 100%; position: relative; z-index: 2;
+    #sec1{
+        width: 100%; height: 400vh; position: relative;
+        .container{
+            width: 100%;
+            .wrap{ 
+                width: 100%;
+                .fixed-page-wrap{
+                    width: 100vw; height: 100vh;
+                    position: relative; z-index: 2;
+                    transition: all 1.2s;
+                    .title-box{
+                        position: fixed; z-index: 3; bottom: 24px;
+                        width:100%; padding: 0 55px; display: flex;
+                        .slogan-tit{
+                            @include tit_gotham(425, 32px,$white, 38px);
+                            position: absolute; top: 0px; width: 100%;
+                            text-align: center; opacity:0;
+                        }
+                        .left-tit{
+                            width: 50%;
+                            h2{@include tit_pretendard(800,72px,$white, 86px);}
+                        }
+                        .right-tit{
+                            bottom: 0; right: 55px; width: 50%; text-align: right;
+                            @include tit_pretendard(800,72px,$white, 86px);
+                            i{
+                                bottom: 0;
+                                color: $orange;
+                            }
+                            span.keywords{
+                                display: inline-block; text-align: center;
+                                width: 472px;
+                            }
+                            .last-tit{
+                                @include tit_pretendard(800, 72px, $white, 86px);
+                                display: none;
+                            }
+                        }
+                        &.on{
+                            margin: 0 auto; width: 100%;
+                            text-align: center; align-items: center; justify-content: center;
+                            .left-tit{width:auto;}
+                            .right-tit{
+                                width:auto;
+                                .keywords{width:auto;}
+                                i{padding:15px;}
+                                .last-tit{display: inline-block;}
+                            }
+                        }
+                     }
+                     .text-box{
+                        position: fixed; z-index: 3; display: none; opacity:0;
+                        width: 100%; height: 100%; top:100%; margin-top:calc(((-25.6px*6))/2);
+                        p{
+                            @include tit_pretendard(400,16px,$white,160%);
+                            width:100%; text-align: center;
+                        }
+                        strong{
+                            @include tit_pretendard(700,16px,$white, 160%);
+                            padding-top:20px; display:block; text-align: center;
+                            margin-top:50px; opacity:0;
+                        }
+                     }
+                    .page{
+                        width:100%; height:100%; display: inline-block;
+                        transition: all 1.2s;
+                        position: relative;
+                        background: url() 50% 50% no-repeat;
+                        background-size: cover;
+                        @each $value in $about_background{
+                            &.page#{$value}{background-image: url(../img/about/about_main_#{$value}.jpg);}
+                        }
+                    }
+                    .page4{
+                        transition: all 1s;
+                        .copy-box{
+                            position: absolute; z-index: 3; width: 100%; height: 100vh;
+                            display: none; opacity:0;  
+                            top:100%; left:55px; margin-top:calc(((-129.6px*3))/2);
+                            @include tit_gotham(425,108px,$white, 130%);
+                            span{font-family: 2; font-weight:325;}
+                         }
+                        .opacity-layer{
+                            transition: all 1s ease-in;
+                            display: block; position: absolute;
+                            top: 0; left: 0; width: 100%; height: 100%;
+                            background: $orange; opacity: 0;
+                        }                        
+                    }
+                }
+                .fake-page{
+                    width: 100%; height: 100%; position: relative;
+                    z-index: 0;
+                    background-color: $orange;
+                }
+            }
+        }
+    }
+    #sec2{
+        background: $gray;
+        .container{
+            .wrap{
+                display: flex;
+                .left-area{
+                    width: 50%; padding:192px 0; 
+                    text-align: center; align-items: center;
+                    img{width: 360px;}
+                }
+                .center-area{
+                    padding: 160px 0;
+                    i{height: 208px; width: 1px; background-color: $black; display: inline-block;}
+                }
+                .right-area{
+                    width: 50%; padding: 160px 0;
+                    p{
+                        text-align: center;
+                        @include tit_pretendard(400, 16px, $black, 160%);
+                        b{
+                            font-weight: 700;
+                            i{color: $orange;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #sec3{
+        background: $ivory;
+        .container{
+            padding: 95px 0 120px 0;
+            .wrap{
+                .title-area{
+                    align-items: center; text-align: center;
+                    h2{@include tit_pretendard(700, 48px, $black, 58px);}
+                    img{width: 354px; height: 70px;}
+                }
+                .slide-area{
+                    width: 100%; padding: 40px 0;
+                    .slide-view{
+                        width: 100%; height: 292px; position: relative;
+                        overflow: hidden;
+                        .slide-wrap{
+                            width: calc(460px * 10); height: 292px;
+                            display: flex; position: absolute;
+                            &:hover{animation-play-state:paused;}
+                            animation: rolling infinite linear 20s;
+                            .slide{ 
+                                width: 430px; height: 292px; border-radius: 24px;
+                                margin-left:30px;
+                                background:url() no-repeat 50% 50%; background-size: cover;
+                                &.slide1{background-image: url(../img/about/about_rolling_1.jpg);}
+                                &.slide2{background-image: url(../img/about/about_rolling_2.jpg);}   
+                                &.slide3{background-image: url(../img/about/about_rolling_3.jpg);}   
+                                &.slide4{background-image: url(../img/about/about_rolling_4.jpg);}   
+                                &.slide5{background-image: url(../img/about/about_rolling_5.jpg);}
+                            }
+                            @keyframes rolling {    
+                                0% {left:0px}
+                                100%{left:-2300px;}
+                            }
+                        }
+                    }
+                }
+                .btn-area{
+                    width: 100%; text-align: center;
+                    a{
+                        display: inline-block;
+                        width: 430px; height: 56px; background-color:$orange;
+                        @include tit_pretendard(700, 16px, $white, 56px);
+                        border-radius: 8px; box-shadow: 0px 2px 8px rgba(0,0,0,.1);
+                        transition: all .3s ease-in-out;
+                        &:hover{filter: brightness(.9);}
+                    }
+                }
+            }
+        }
+    }
+    #sec4{
+        background:$blue;
+        .container{
+            padding: 160px 55px; width: 100%;
+            .wrap{
+                width: 100%; position: relative;
+                h2{@include tit_gotham(400,108px,$white, 130px);}
+                margin-bottom: 180px;
+                .bot-area{
+                    position: absolute; right: 0;
+                    border-left: 1px solid $white; padding-left: 20px;
+                    p{@include tit_pretendard(300, 16px, $white, 160%); width: 470px;}
+                }
+            }
+        }
+    }
+    #sec5{
+        background: $gray;
+        .container{
+            padding: 80px 55px;
+            .wrap{
+                h4{
+                    @include tit_pretendard(400, 26px, $black, 31px);
+                    text-align: center; margin-bottom: 40px;
+                    span{color: $orange;}
+                }
+                .circle-area{
+                    width:100%; height: 450px; position: relative;
+                    .circle{
+                        position: absolute;
+                        height: 450px; width: 450px; border-radius: 225px;
+                        background-color: $white; text-align: center;
+                        h3{@include tit_gotham(600, 32px, $black, 38px); padding: 192px 0 10px 0;}
+                        span{@include tit_pretendard(400, 16px, $black, 19px);}
+                        &.circle1{left: 0; }
+                        &.circle2{background-color: $orange; color:$white; z-index: 2; left: 50%; margin-left:-225px;}
+                        &.circle3{right: 0;}
+                    }
+                }
+            }
+        }
+    }
+    #sec6{
+        background: #00B21D;
+        .container{
+            padding: 80px 55px;
+            .wrap{
+                display: flex; position: relative;
+                .left-area{
+                    text-align: left; align-items: left;
+                    h2{@include tit_pretendard(700, 48px, $white, 58px);text-align: left;}
+                    .text-box{
+                        padding: 40px 0;
+                        p{
+                            @include tit_pretendard(300, 16px, $white, 160%);
+                            width: 368px; text-align: left; margin: 10px 0;
+                        }
+                    }
+                    a{
+                        display: inline-block; width: 270px; height: 56px;
+                        background: $orange; box-shadow: 0 2px 8px rgba(0,0,0,.1); border-radius: 8px;
+                        text-align: center; @include tit_pretendard(700, 16px, $white, 56px);
+                        transition: all .3s ease-in-out;
+                        &:hover{filter: brightness(.9);}
+                    }
+                }
+                .right-area{
+                    width: 571px; height: 379px; position: absolute; right: 0; bottom:108px;
+                    img{width: 571px; height: 379px;border-radius: 8px;}
+                    span{
+                        background:$white; @include tit_pretendard(700,14px,$black, 22px);
+                        padding: 2px 9px; right: 10px; bottom: 10px;
+                        position: absolute; z-index: 2; border-radius: 8px;
+                    }
+                }
+            }
+        }
+    }
+    #sec7{
+        background: $orange;
+        .container{
+            padding: 80px 55px;
+            .wrap{
+                position: relative;
+                .area{
+                    display: flex; position: relative; 
+                    h2{@include tit_pretendard(700, 48px, $white, 58px);}
+                    p{@include tit_pretendard(300, 16px, $white, 160%); width: 370px; margin:5px 0;}
+                    img{width: 670px; border-radius: 12px;}
+                    .top-box{position: absolute; top: 0;}
+                    .bot-box{position: absolute; bottom: 0;}
+                    &.area1{
+                        height: 670px;
+                        .left-box{
+                            min-width: 500px;
+                            .top-box{
+                                span{@include tit_pretendard(400, 26px, $white, 31px);}
+                                h2{margin-top: 10px;}
+                            }
+                            .bot-box{
+                                h3{@include tit_gotham(600, 32px, $white, 38px); margin-bottom: 10px;}
+                            }
+                        }
+                        .right-box{
+                            min-width: 670px; position: absolute; right: 0;
+                            img{position: absolute; right: 0;}
+                        }
+                    }
+                    &.area2{
+                        margin-top: 159px; height: 502.5px;
+                        .left-box{min-width: 500px;}
+                        .right-box{min-width: 670px; position: absolute; right: 0;}
+                    }
+                    &.area3{
+                        margin-top: 159px; height: 502.5px;
+                        .left-box{min-width: 670px;}
+                        .right-box{
+                            min-width: 500px; position: absolute; right:0;
+                            .bot-box{bottom: -502.5px;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #sec8{
+        background: $ivory;
+        .container{
+            padding: 80px 0;
+            .wrap{
+                width: 100%; position: relative;
+                h2{@include tit_gotham(600, 48px, $orange, 58px); padding-left:55px;}
+                .top-area{
+                    ul.record-box{
+                        margin: 80px 0 160px 0; display: flex;
+                        padding: 40px;
+                        position: relative;
+                        li{
+                            width: 33.333%; padding: 15px;
+                            div.record{
+                                position: relative;
+                                width: 100%; padding-bottom: 100%;
+                                background: $white;
+                                border: 1px solid $darkGray; border-radius: 16px;
+                                box-shadow: 0 2px 8px rgba(0,0,0,.1);
+                                i{width: 50px; height: 50px; background:$orange; position: absolute; top:40px; left:40px; display: inline-block;}
+                                span{@include tit_pretendard(400, 26px,$black,31px);position: absolute; bottom: 98px; right: 40px;}
+                                b{@include tit_pretendard(700, 40px, $black, 48px);position: absolute; bottom: 40px; right: 40px;}
+
+                            }
+                        }
+                    }
+                }
+                .bot-area{
+                    display: flex; position: relative; padding: 0 55px;
+                    .left-box{
+                        position: absolute; left: 0; top: 0;
+                    }
+                    .right-box{
+                        width: 100%; text-align: right;
+                        li{
+                            margin-bottom: 20px;
+                            a{
+                                display: inline-block; position: relative;
+                                background: $white; border: 1px solid $darkGray; border-radius: 16px;
+                                width: 670px; height: 80px;
+                                text-align: left; padding: 0 32px;
+                                @include tit_pretendard(700, 26px,$black,80px);
+                                &::after{
+                                    content:'>';
+                                    position: absolute; color: $orange;
+                                    right: 32px; font-weight: 100; font-size: 40px;
+                                }
+                                transition: all .3s ease-in-out;
+                                &:hover{
+                                    filter: brightness(.9);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}  

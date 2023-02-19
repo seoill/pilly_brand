@@ -1,0 +1,720 @@
+@import url("./reset.css");
+@import url("./header.css");
+html {
+  overflow: hidden;
+}
+
+main {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+main #sec1 {
+  width: 100%;
+  height: 400vh;
+  position: relative;
+}
+main #sec1 .container {
+  width: 100%;
+}
+main #sec1 .container .wrap {
+  width: 100%;
+}
+main #sec1 .container .wrap .fixed-page-wrap {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+  transition: all 1.2s;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box {
+  position: fixed;
+  z-index: 3;
+  bottom: 24px;
+  width: 100%;
+  padding: 0 55px;
+  display: flex;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box .slogan-tit {
+  font-family: "Gotham";
+  font-weight: 425;
+  font-size: 32px;
+  color: #FFFFFF;
+  line-height: 38px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box .left-tit {
+  width: 50%;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box .left-tit h2 {
+  font-family: "Pretendard Variable";
+  font-weight: 800;
+  font-size: 72px;
+  color: #FFFFFF;
+  line-height: 86px;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit {
+  bottom: 0;
+  right: 55px;
+  width: 50%;
+  text-align: right;
+  font-family: "Pretendard Variable";
+  font-weight: 800;
+  font-size: 72px;
+  color: #FFFFFF;
+  line-height: 86px;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit i {
+  bottom: 0;
+  color: #FF5C35;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit span.keywords {
+  display: inline-block;
+  text-align: center;
+  width: 472px;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit .last-tit {
+  font-family: "Pretendard Variable";
+  font-weight: 800;
+  font-size: 72px;
+  color: #FFFFFF;
+  line-height: 86px;
+  display: none;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box.on {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box.on .left-tit {
+  width: auto;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box.on .right-tit {
+  width: auto;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box.on .right-tit .keywords {
+  width: auto;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box.on .right-tit i {
+  padding: 15px;
+}
+main #sec1 .container .wrap .fixed-page-wrap .title-box.on .right-tit .last-tit {
+  display: inline-block;
+}
+main #sec1 .container .wrap .fixed-page-wrap .text-box {
+  position: fixed;
+  z-index: 3;
+  display: none;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  margin-top: -76.8px;
+}
+main #sec1 .container .wrap .fixed-page-wrap .text-box p {
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 160%;
+  width: 100%;
+  text-align: center;
+}
+main #sec1 .container .wrap .fixed-page-wrap .text-box strong {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 160%;
+  padding-top: 20px;
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+  opacity: 0;
+}
+main #sec1 .container .wrap .fixed-page-wrap .page {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  transition: all 1.2s;
+  position: relative;
+  background: url() 50% 50% no-repeat;
+  background-size: cover;
+}
+main #sec1 .container .wrap .fixed-page-wrap .page.page1 {
+  background-image: url(../img/about/about_main_1.jpg);
+}
+main #sec1 .container .wrap .fixed-page-wrap .page.page2 {
+  background-image: url(../img/about/about_main_2.jpg);
+}
+main #sec1 .container .wrap .fixed-page-wrap .page.page3 {
+  background-image: url(../img/about/about_main_3.jpg);
+}
+main #sec1 .container .wrap .fixed-page-wrap .page.page4 {
+  background-image: url(../img/about/about_main_4.jpg);
+}
+main #sec1 .container .wrap .fixed-page-wrap .page4 {
+  transition: all 1s;
+}
+main #sec1 .container .wrap .fixed-page-wrap .page4 .copy-box {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  opacity: 0;
+  top: 100%;
+  left: 55px;
+  margin-top: -194.4px;
+  font-family: "Gotham";
+  font-weight: 425;
+  font-size: 108px;
+  color: #FFFFFF;
+  line-height: 130%;
+}
+main #sec1 .container .wrap .fixed-page-wrap .page4 .copy-box span {
+  font-family: 2;
+  font-weight: 325;
+}
+main #sec1 .container .wrap .fixed-page-wrap .page4 .opacity-layer {
+  transition: all 1s ease-in;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FF5C35;
+  opacity: 0;
+}
+main #sec1 .container .wrap .fake-page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+  background-color: #FF5C35;
+}
+main #sec2 {
+  background: #F5F5F5;
+}
+main #sec2 .container .wrap {
+  display: flex;
+}
+main #sec2 .container .wrap .left-area {
+  width: 50%;
+  padding: 192px 0;
+  text-align: center;
+  align-items: center;
+}
+main #sec2 .container .wrap .left-area img {
+  width: 360px;
+}
+main #sec2 .container .wrap .center-area {
+  padding: 160px 0;
+}
+main #sec2 .container .wrap .center-area i {
+  height: 208px;
+  width: 1px;
+  background-color: #000000;
+  display: inline-block;
+}
+main #sec2 .container .wrap .right-area {
+  width: 50%;
+  padding: 160px 0;
+}
+main #sec2 .container .wrap .right-area p {
+  text-align: center;
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  line-height: 160%;
+}
+main #sec2 .container .wrap .right-area p b {
+  font-weight: 700;
+}
+main #sec2 .container .wrap .right-area p b i {
+  color: #FF5C35;
+}
+main #sec3 {
+  background: #FFF2DF;
+}
+main #sec3 .container {
+  padding: 95px 0 120px 0;
+}
+main #sec3 .container .wrap .title-area {
+  align-items: center;
+  text-align: center;
+}
+main #sec3 .container .wrap .title-area h2 {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 48px;
+  color: #000000;
+  line-height: 58px;
+}
+main #sec3 .container .wrap .title-area img {
+  width: 354px;
+  height: 70px;
+}
+main #sec3 .container .wrap .slide-area {
+  width: 100%;
+  padding: 40px 0;
+}
+main #sec3 .container .wrap .slide-area .slide-view {
+  width: 100%;
+  height: 292px;
+  position: relative;
+  overflow: hidden;
+}
+main #sec3 .container .wrap .slide-area .slide-view .slide-wrap {
+  width: 4600px;
+  height: 292px;
+  display: flex;
+  position: absolute;
+  animation: rolling infinite linear 20s;
+}
+main #sec3 .container .wrap .slide-area .slide-view .slide-wrap:hover {
+  animation-play-state: paused;
+}
+main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide {
+  width: 430px;
+  height: 292px;
+  border-radius: 24px;
+  margin-left: 30px;
+  background: url() no-repeat 50% 50%;
+  background-size: cover;
+}
+main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide1 {
+  background-image: url(../img/about/about_rolling_1.jpg);
+}
+main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide2 {
+  background-image: url(../img/about/about_rolling_2.jpg);
+}
+main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide3 {
+  background-image: url(../img/about/about_rolling_3.jpg);
+}
+main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide4 {
+  background-image: url(../img/about/about_rolling_4.jpg);
+}
+main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide5 {
+  background-image: url(../img/about/about_rolling_5.jpg);
+}
+@keyframes rolling {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: -2300px;
+  }
+}
+main #sec3 .container .wrap .btn-area {
+  width: 100%;
+  text-align: center;
+}
+main #sec3 .container .wrap .btn-area a {
+  display: inline-block;
+  width: 430px;
+  height: 56px;
+  background-color: #FF5C35;
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 56px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+main #sec3 .container .wrap .btn-area a:hover {
+  filter: brightness(0.9);
+}
+main #sec4 {
+  background: #00A7E1;
+}
+main #sec4 .container {
+  padding: 160px 55px;
+  width: 100%;
+}
+main #sec4 .container .wrap {
+  width: 100%;
+  position: relative;
+  margin-bottom: 180px;
+}
+main #sec4 .container .wrap h2 {
+  font-family: "Gotham";
+  font-weight: 400;
+  font-size: 108px;
+  color: #FFFFFF;
+  line-height: 130px;
+}
+main #sec4 .container .wrap .bot-area {
+  position: absolute;
+  right: 0;
+  border-left: 1px solid #FFFFFF;
+  padding-left: 20px;
+}
+main #sec4 .container .wrap .bot-area p {
+  font-family: "Pretendard Variable";
+  font-weight: 300;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 160%;
+  width: 470px;
+}
+main #sec5 {
+  background: #F5F5F5;
+}
+main #sec5 .container {
+  padding: 80px 55px;
+}
+main #sec5 .container .wrap h4 {
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 26px;
+  color: #000000;
+  line-height: 31px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+main #sec5 .container .wrap h4 span {
+  color: #FF5C35;
+}
+main #sec5 .container .wrap .circle-area {
+  width: 100%;
+  height: 450px;
+  position: relative;
+}
+main #sec5 .container .wrap .circle-area .circle {
+  position: absolute;
+  height: 450px;
+  width: 450px;
+  border-radius: 225px;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+main #sec5 .container .wrap .circle-area .circle h3 {
+  font-family: "Gotham";
+  font-weight: 600;
+  font-size: 32px;
+  color: #000000;
+  line-height: 38px;
+  padding: 192px 0 10px 0;
+}
+main #sec5 .container .wrap .circle-area .circle span {
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  line-height: 19px;
+}
+main #sec5 .container .wrap .circle-area .circle.circle1 {
+  left: 0;
+}
+main #sec5 .container .wrap .circle-area .circle.circle2 {
+  background-color: #FF5C35;
+  color: #FFFFFF;
+  z-index: 2;
+  left: 50%;
+  margin-left: -225px;
+}
+main #sec5 .container .wrap .circle-area .circle.circle3 {
+  right: 0;
+}
+main #sec6 {
+  background: #00B21D;
+}
+main #sec6 .container {
+  padding: 80px 55px;
+}
+main #sec6 .container .wrap {
+  display: flex;
+  position: relative;
+}
+main #sec6 .container .wrap .left-area {
+  text-align: left;
+  align-items: left;
+}
+main #sec6 .container .wrap .left-area h2 {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 48px;
+  color: #FFFFFF;
+  line-height: 58px;
+  text-align: left;
+}
+main #sec6 .container .wrap .left-area .text-box {
+  padding: 40px 0;
+}
+main #sec6 .container .wrap .left-area .text-box p {
+  font-family: "Pretendard Variable";
+  font-weight: 300;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 160%;
+  width: 368px;
+  text-align: left;
+  margin: 10px 0;
+}
+main #sec6 .container .wrap .left-area a {
+  display: inline-block;
+  width: 270px;
+  height: 56px;
+  background: #FF5C35;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 56px;
+  transition: all 0.3s ease-in-out;
+}
+main #sec6 .container .wrap .left-area a:hover {
+  filter: brightness(0.9);
+}
+main #sec6 .container .wrap .right-area {
+  width: 571px;
+  height: 379px;
+  position: absolute;
+  right: 0;
+  bottom: 108px;
+}
+main #sec6 .container .wrap .right-area img {
+  width: 571px;
+  height: 379px;
+  border-radius: 8px;
+}
+main #sec6 .container .wrap .right-area span {
+  background: #FFFFFF;
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 14px;
+  color: #000000;
+  line-height: 22px;
+  padding: 2px 9px;
+  right: 10px;
+  bottom: 10px;
+  position: absolute;
+  z-index: 2;
+  border-radius: 8px;
+}
+main #sec7 {
+  background: #FF5C35;
+}
+main #sec7 .container {
+  padding: 80px 55px;
+}
+main #sec7 .container .wrap {
+  position: relative;
+}
+main #sec7 .container .wrap .area {
+  display: flex;
+  position: relative;
+}
+main #sec7 .container .wrap .area h2 {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 48px;
+  color: #FFFFFF;
+  line-height: 58px;
+}
+main #sec7 .container .wrap .area p {
+  font-family: "Pretendard Variable";
+  font-weight: 300;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 160%;
+  width: 370px;
+  margin: 5px 0;
+}
+main #sec7 .container .wrap .area img {
+  width: 670px;
+  border-radius: 12px;
+}
+main #sec7 .container .wrap .area .top-box {
+  position: absolute;
+  top: 0;
+}
+main #sec7 .container .wrap .area .bot-box {
+  position: absolute;
+  bottom: 0;
+}
+main #sec7 .container .wrap .area.area1 {
+  height: 670px;
+}
+main #sec7 .container .wrap .area.area1 .left-box {
+  min-width: 500px;
+}
+main #sec7 .container .wrap .area.area1 .left-box .top-box span {
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 26px;
+  color: #FFFFFF;
+  line-height: 31px;
+}
+main #sec7 .container .wrap .area.area1 .left-box .top-box h2 {
+  margin-top: 10px;
+}
+main #sec7 .container .wrap .area.area1 .left-box .bot-box h3 {
+  font-family: "Gotham";
+  font-weight: 600;
+  font-size: 32px;
+  color: #FFFFFF;
+  line-height: 38px;
+  margin-bottom: 10px;
+}
+main #sec7 .container .wrap .area.area1 .right-box {
+  min-width: 670px;
+  position: absolute;
+  right: 0;
+}
+main #sec7 .container .wrap .area.area1 .right-box img {
+  position: absolute;
+  right: 0;
+}
+main #sec7 .container .wrap .area.area2 {
+  margin-top: 159px;
+  height: 502.5px;
+}
+main #sec7 .container .wrap .area.area2 .left-box {
+  min-width: 500px;
+}
+main #sec7 .container .wrap .area.area2 .right-box {
+  min-width: 670px;
+  position: absolute;
+  right: 0;
+}
+main #sec7 .container .wrap .area.area3 {
+  margin-top: 159px;
+  height: 502.5px;
+}
+main #sec7 .container .wrap .area.area3 .left-box {
+  min-width: 670px;
+}
+main #sec7 .container .wrap .area.area3 .right-box {
+  min-width: 500px;
+  position: absolute;
+  right: 0;
+}
+main #sec7 .container .wrap .area.area3 .right-box .bot-box {
+  bottom: -502.5px;
+}
+main #sec8 {
+  background: #FFF2DF;
+}
+main #sec8 .container {
+  padding: 80px 0;
+}
+main #sec8 .container .wrap {
+  width: 100%;
+  position: relative;
+}
+main #sec8 .container .wrap h2 {
+  font-family: "Gotham";
+  font-weight: 600;
+  font-size: 48px;
+  color: #FF5C35;
+  line-height: 58px;
+  padding-left: 55px;
+}
+main #sec8 .container .wrap .top-area ul.record-box {
+  margin: 80px 0 160px 0;
+  display: flex;
+  padding: 40px;
+  position: relative;
+}
+main #sec8 .container .wrap .top-area ul.record-box li {
+  width: 33.333%;
+  padding: 15px;
+}
+main #sec8 .container .wrap .top-area ul.record-box li div.record {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  background: #FFFFFF;
+  border: 1px solid #8E8E93;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+main #sec8 .container .wrap .top-area ul.record-box li div.record i {
+  width: 50px;
+  height: 50px;
+  background: #FF5C35;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  display: inline-block;
+}
+main #sec8 .container .wrap .top-area ul.record-box li div.record span {
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 26px;
+  color: #000000;
+  line-height: 31px;
+  position: absolute;
+  bottom: 98px;
+  right: 40px;
+}
+main #sec8 .container .wrap .top-area ul.record-box li div.record b {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 40px;
+  color: #000000;
+  line-height: 48px;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+main #sec8 .container .wrap .bot-area {
+  display: flex;
+  position: relative;
+  padding: 0 55px;
+}
+main #sec8 .container .wrap .bot-area .left-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+main #sec8 .container .wrap .bot-area .right-box {
+  width: 100%;
+  text-align: right;
+}
+main #sec8 .container .wrap .bot-area .right-box li {
+  margin-bottom: 20px;
+}
+main #sec8 .container .wrap .bot-area .right-box li a {
+  display: inline-block;
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid #8E8E93;
+  border-radius: 16px;
+  width: 670px;
+  height: 80px;
+  text-align: left;
+  padding: 0 32px;
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 26px;
+  color: #000000;
+  line-height: 80px;
+  transition: all 0.3s ease-in-out;
+}
+main #sec8 .container .wrap .bot-area .right-box li a::after {
+  content: ">";
+  position: absolute;
+  color: #FF5C35;
+  right: 32px;
+  font-weight: 100;
+  font-size: 40px;
+}
+main #sec8 .container .wrap .bot-area .right-box li a:hover {
+  filter: brightness(0.9);
+}/*# sourceMappingURL=sytle.css.map */
