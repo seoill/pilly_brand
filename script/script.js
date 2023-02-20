@@ -2,8 +2,7 @@
     class about {
         init(){
             this.scrollEvent();
-            this.service();
-            // this.slider();
+            console.log('about start');
         }
         scrollEvent(e){
             let pageLocation = String(document.location).split('/');
@@ -202,19 +201,21 @@
                     });
                 }
                 mainSlide();
-                $('.slide-view').on('mouseover',function(){
-                });
             });
         }
+    }
+    const newAbout = new about();
+    class service{
+        init(){
+            this.service();
+            console.log('service start');
+        }
         service(){
-            let pageLocation = String(document.location).split('/');
-            let selectedPage = pageLocation[4];
-            if(selectedPage == 'index.html#' || selectedPage == 'index.html') return
-
             const win = $(window);
             let isAnimated = false;
             win.on('wheel scroll touchmove',function(e){
                 if(!isAnimated){
+                    if(e.originalEvent.deltaY<0) return;
                     $('#sec1').addClass('on');
                     $('.title-box h2').eq(0).addClass('ani-fadeIn');
                     $('.title-box h2').eq(1).addClass('ani-fadeIn');
@@ -222,16 +223,15 @@
                     isAnimated = true;
                     setTimeout(function(){
                         $('html').css({'overflow':'scroll'});
-                    },1400);
+                    });
                 }
-                if(e.originalEvent.deltaY<0 && win.scrollTop() == 0){
-                    console.log('oh')
-                    if(isAnimated){
+                if(e.originalEvent.deltaY<0 && win.scrollTop() < 10){
+                    if(isAnimated == true){
+                        $('html').css({'overflow':'hidden'});
                         $('#sec1').removeClass('on');
                         $('.title-box h2').eq(0).removeClass('ani-fadeIn');
                         $('.title-box h2').eq(1).removeClass('ani-fadeIn');
                         $('.text-box').removeClass('ani-up2');
-                        $('html').css({'overflow':'hidden'});
                         isAnimated=false;
                     }
                     
@@ -259,7 +259,23 @@
             });
         }
     }
-    const newAbout = new about();
-    newAbout.init();
+    const newService = new service();
+
+    $(document).ready(function(){
+        let pageLocation = String(document.location).split('/');
+        let selectedPage = pageLocation[4].replace('.html','');
+    
+
+        function linkCheck(){
+            if(selectedPage == 'index.html' || 'index.html#') newAbout.init();
+            if(selectedPage == 'service.html' || 'service.html#') newService.init();
+            if(selectedPage == 'story.html' || 'story.html#'){
+            }
+            if(selectedPage == 'people.html' || 'people.html#'){
+            }
+        }
+        linkCheck();
+    });
 
 })(jQuery);
+

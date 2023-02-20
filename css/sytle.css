@@ -1,33 +1,128 @@
 @import url("./reset.css");
-@import url("./header.css");
-html {
-  overflow: hidden;
+.ani-fadeIn {
+  animation: fadeInAni 0.6s both ease-in;
 }
 
-main {
+.ani-up2 {
+  animation: upAni2 1s both ease-in-out;
+}
+
+@keyframes fadeInAni {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes upAni2 {
+  0% {
+    transform: translateY(140px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.delay-0 {
+  animation-delay: 0;
+}
+
+.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.delay-2 {
+  animation-delay: 0.6s;
+}
+
+.delay-3 {
+  animation-delay: 0.9s;
+}
+
+.delay-4 {
+  animation-delay: 1.2s;
+}
+
+.delay-5 {
+  animation-delay: 1.5s;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 64px;
+  z-index: 15;
+}
+header .container {
+  padding: 16px 32px 16px 55px;
+}
+header .container .wrap nav {
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+}
+header .container .wrap nav h1.left-box a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  background: white;
+}
+header .container .wrap nav ul.right-box {
+  width: 100%;
+  text-align: right;
+}
+header .container .wrap nav ul.right-box li {
+  display: inline-block;
+  line-height: 32px;
+  margin-left: 16px;
+  transition: all 0.3s;
+}
+header .container .wrap nav ul.right-box li.on {
+  border-bottom: 2px solid #ffffff;
+}
+header .container .wrap nav ul.right-box li:hover {
+  border-bottom: 2px solid #ffffff;
+}
+header .container .wrap nav ul.right-box li a {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 12px;
+  color: #FFFFFF;
+  line-height: 14px;
+  transition: all 0.3s;
+}
+header .container .wrap nav ul.right-box li a:hover {
+  opacity: 0.8;
+}
+
+main#aboutMain {
   width: 100%;
   position: relative;
   z-index: 2;
 }
-main #sec1 {
+main#aboutMain #sec1 {
   width: 100%;
   height: 400vh;
   position: relative;
 }
-main #sec1 .container {
+main#aboutMain #sec1 .container {
   width: 100%;
 }
-main #sec1 .container .wrap {
+main#aboutMain #sec1 .container .wrap {
   width: 100%;
 }
-main #sec1 .container .wrap .fixed-page-wrap {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap {
   width: 100vw;
   height: 100vh;
   position: relative;
   z-index: 2;
   transition: all 1.2s;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box {
   position: fixed;
   z-index: 3;
   bottom: 24px;
@@ -35,7 +130,7 @@ main #sec1 .container .wrap .fixed-page-wrap .title-box {
   padding: 0 55px;
   display: flex;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box .slogan-tit {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box .slogan-tit {
   font-family: "Gotham";
   font-weight: 425;
   font-size: 32px;
@@ -47,17 +142,17 @@ main #sec1 .container .wrap .fixed-page-wrap .title-box .slogan-tit {
   text-align: center;
   opacity: 0;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box .left-tit {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box .left-tit {
   width: 50%;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box .left-tit h2 {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box .left-tit h2 {
   font-family: "Pretendard Variable";
   font-weight: 800;
   font-size: 72px;
   color: #FFFFFF;
   line-height: 86px;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit {
   bottom: 0;
   right: 55px;
   width: 50%;
@@ -68,16 +163,16 @@ main #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit {
   color: #FFFFFF;
   line-height: 86px;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit i {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit i {
   bottom: 0;
   color: #FF5C35;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit span.keywords {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit span.keywords {
   display: inline-block;
   text-align: center;
   width: 472px;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit .last-tit {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit .last-tit {
   font-family: "Pretendard Variable";
   font-weight: 800;
   font-size: 72px;
@@ -85,29 +180,29 @@ main #sec1 .container .wrap .fixed-page-wrap .title-box .right-tit .last-tit {
   line-height: 86px;
   display: none;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box.on {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box.on {
   margin: 0 auto;
   width: 100%;
   text-align: center;
   align-items: center;
   justify-content: center;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box.on .left-tit {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box.on .left-tit {
   width: auto;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box.on .right-tit {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box.on .right-tit {
   width: auto;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box.on .right-tit .keywords {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box.on .right-tit .keywords {
   width: auto;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box.on .right-tit i {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box.on .right-tit i {
   padding: 15px;
 }
-main #sec1 .container .wrap .fixed-page-wrap .title-box.on .right-tit .last-tit {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .title-box.on .right-tit .last-tit {
   display: inline-block;
 }
-main #sec1 .container .wrap .fixed-page-wrap .text-box {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .text-box {
   position: fixed;
   z-index: 3;
   display: none;
@@ -117,7 +212,7 @@ main #sec1 .container .wrap .fixed-page-wrap .text-box {
   top: 100%;
   margin-top: -76.8px;
 }
-main #sec1 .container .wrap .fixed-page-wrap .text-box p {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .text-box p {
   font-family: "Pretendard Variable";
   font-weight: 400;
   font-size: 16px;
@@ -126,7 +221,7 @@ main #sec1 .container .wrap .fixed-page-wrap .text-box p {
   width: 100%;
   text-align: center;
 }
-main #sec1 .container .wrap .fixed-page-wrap .text-box strong {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .text-box strong {
   font-family: "Pretendard Variable";
   font-weight: 700;
   font-size: 16px;
@@ -138,7 +233,7 @@ main #sec1 .container .wrap .fixed-page-wrap .text-box strong {
   margin-top: 50px;
   opacity: 0;
 }
-main #sec1 .container .wrap .fixed-page-wrap .page {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .page {
   width: 100%;
   height: 100%;
   display: inline-block;
@@ -147,22 +242,22 @@ main #sec1 .container .wrap .fixed-page-wrap .page {
   background: url() 50% 50% no-repeat;
   background-size: cover;
 }
-main #sec1 .container .wrap .fixed-page-wrap .page.page1 {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .page.page1 {
   background-image: url(../img/about/about_main_1.jpg);
 }
-main #sec1 .container .wrap .fixed-page-wrap .page.page2 {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .page.page2 {
   background-image: url(../img/about/about_main_2.jpg);
 }
-main #sec1 .container .wrap .fixed-page-wrap .page.page3 {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .page.page3 {
   background-image: url(../img/about/about_main_3.jpg);
 }
-main #sec1 .container .wrap .fixed-page-wrap .page.page4 {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .page.page4 {
   background-image: url(../img/about/about_main_4.jpg);
 }
-main #sec1 .container .wrap .fixed-page-wrap .page4 {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .page4 {
   transition: all 1s;
 }
-main #sec1 .container .wrap .fixed-page-wrap .page4 .copy-box {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .page4 .copy-box {
   position: absolute;
   z-index: 3;
   width: 100%;
@@ -178,11 +273,11 @@ main #sec1 .container .wrap .fixed-page-wrap .page4 .copy-box {
   color: #FFFFFF;
   line-height: 130%;
 }
-main #sec1 .container .wrap .fixed-page-wrap .page4 .copy-box span {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .page4 .copy-box span {
   font-family: 2;
   font-weight: 325;
 }
-main #sec1 .container .wrap .fixed-page-wrap .page4 .opacity-layer {
+main#aboutMain #sec1 .container .wrap .fixed-page-wrap .page4 .opacity-layer {
   transition: all 1s ease-in;
   display: block;
   position: absolute;
@@ -193,42 +288,42 @@ main #sec1 .container .wrap .fixed-page-wrap .page4 .opacity-layer {
   background: #FF5C35;
   opacity: 0;
 }
-main #sec1 .container .wrap .fake-page {
+main#aboutMain #sec1 .container .wrap .fake-page {
   width: 100%;
   height: 100%;
   position: relative;
   z-index: 0;
   background-color: #FF5C35;
 }
-main #sec2 {
+main#aboutMain #sec2 {
   background: #F5F5F5;
 }
-main #sec2 .container .wrap {
+main#aboutMain #sec2 .container .wrap {
   display: flex;
 }
-main #sec2 .container .wrap .left-area {
+main#aboutMain #sec2 .container .wrap .left-area {
   width: 50%;
   padding: 192px 0;
   text-align: center;
   align-items: center;
 }
-main #sec2 .container .wrap .left-area img {
+main#aboutMain #sec2 .container .wrap .left-area img {
   width: 360px;
 }
-main #sec2 .container .wrap .center-area {
+main#aboutMain #sec2 .container .wrap .center-area {
   padding: 160px 0;
 }
-main #sec2 .container .wrap .center-area i {
+main#aboutMain #sec2 .container .wrap .center-area i {
   height: 208px;
   width: 1px;
   background-color: #000000;
   display: inline-block;
 }
-main #sec2 .container .wrap .right-area {
+main#aboutMain #sec2 .container .wrap .right-area {
   width: 50%;
   padding: 160px 0;
 }
-main #sec2 .container .wrap .right-area p {
+main#aboutMain #sec2 .container .wrap .right-area p {
   text-align: center;
   font-family: "Pretendard Variable";
   font-weight: 400;
@@ -236,54 +331,54 @@ main #sec2 .container .wrap .right-area p {
   color: #000000;
   line-height: 160%;
 }
-main #sec2 .container .wrap .right-area p b {
+main#aboutMain #sec2 .container .wrap .right-area p b {
   font-weight: 700;
 }
-main #sec2 .container .wrap .right-area p b i {
+main#aboutMain #sec2 .container .wrap .right-area p b i {
   color: #FF5C35;
 }
-main #sec3 {
+main#aboutMain #sec3 {
   background: #FFF2DF;
 }
-main #sec3 .container {
+main#aboutMain #sec3 .container {
   padding: 95px 0 120px 0;
 }
-main #sec3 .container .wrap .title-area {
+main#aboutMain #sec3 .container .wrap .title-area {
   align-items: center;
   text-align: center;
 }
-main #sec3 .container .wrap .title-area h2 {
+main#aboutMain #sec3 .container .wrap .title-area h2 {
   font-family: "Pretendard Variable";
   font-weight: 700;
   font-size: 48px;
   color: #000000;
   line-height: 58px;
 }
-main #sec3 .container .wrap .title-area img {
+main#aboutMain #sec3 .container .wrap .title-area img {
   width: 354px;
   height: 70px;
 }
-main #sec3 .container .wrap .slide-area {
+main#aboutMain #sec3 .container .wrap .slide-area {
   width: 100%;
   padding: 40px 0;
 }
-main #sec3 .container .wrap .slide-area .slide-view {
+main#aboutMain #sec3 .container .wrap .slide-area .slide-view {
   width: 100%;
   height: 292px;
   position: relative;
   overflow: hidden;
 }
-main #sec3 .container .wrap .slide-area .slide-view .slide-wrap {
+main#aboutMain #sec3 .container .wrap .slide-area .slide-view .slide-wrap {
   width: 4600px;
   height: 292px;
   display: flex;
   position: absolute;
   animation: rolling infinite linear 20s;
 }
-main #sec3 .container .wrap .slide-area .slide-view .slide-wrap:hover {
+main#aboutMain #sec3 .container .wrap .slide-area .slide-view .slide-wrap:hover {
   animation-play-state: paused;
 }
-main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide {
+main#aboutMain #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide {
   width: 430px;
   height: 292px;
   border-radius: 24px;
@@ -291,19 +386,19 @@ main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide {
   background: url() no-repeat 50% 50%;
   background-size: cover;
 }
-main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide1 {
+main#aboutMain #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide1 {
   background-image: url(../img/about/about_rolling_1.jpg);
 }
-main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide2 {
+main#aboutMain #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide2 {
   background-image: url(../img/about/about_rolling_2.jpg);
 }
-main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide3 {
+main#aboutMain #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide3 {
   background-image: url(../img/about/about_rolling_3.jpg);
 }
-main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide4 {
+main#aboutMain #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide4 {
   background-image: url(../img/about/about_rolling_4.jpg);
 }
-main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide5 {
+main#aboutMain #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide5 {
   background-image: url(../img/about/about_rolling_5.jpg);
 }
 @keyframes rolling {
@@ -314,11 +409,11 @@ main #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide.slide5 {
     left: -2300px;
   }
 }
-main #sec3 .container .wrap .btn-area {
+main#aboutMain #sec3 .container .wrap .btn-area {
   width: 100%;
   text-align: center;
 }
-main #sec3 .container .wrap .btn-area a {
+main#aboutMain #sec3 .container .wrap .btn-area a {
   display: inline-block;
   width: 430px;
   height: 56px;
@@ -332,35 +427,35 @@ main #sec3 .container .wrap .btn-area a {
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
 }
-main #sec3 .container .wrap .btn-area a:hover {
+main#aboutMain #sec3 .container .wrap .btn-area a:hover {
   filter: brightness(0.9);
 }
-main #sec4 {
+main#aboutMain #sec4 {
   background: #00A7E1;
 }
-main #sec4 .container {
+main#aboutMain #sec4 .container {
   padding: 160px 55px;
   width: 100%;
 }
-main #sec4 .container .wrap {
+main#aboutMain #sec4 .container .wrap {
   width: 100%;
   position: relative;
   margin-bottom: 180px;
 }
-main #sec4 .container .wrap h2 {
+main#aboutMain #sec4 .container .wrap h2 {
   font-family: "Gotham";
   font-weight: 400;
   font-size: 108px;
   color: #FFFFFF;
   line-height: 130px;
 }
-main #sec4 .container .wrap .bot-area {
+main#aboutMain #sec4 .container .wrap .bot-area {
   position: absolute;
   right: 0;
   border-left: 1px solid #FFFFFF;
   padding-left: 20px;
 }
-main #sec4 .container .wrap .bot-area p {
+main#aboutMain #sec4 .container .wrap .bot-area p {
   font-family: "Pretendard Variable";
   font-weight: 300;
   font-size: 16px;
@@ -368,13 +463,13 @@ main #sec4 .container .wrap .bot-area p {
   line-height: 160%;
   width: 470px;
 }
-main #sec5 {
+main#aboutMain #sec5 {
   background: #F5F5F5;
 }
-main #sec5 .container {
+main#aboutMain #sec5 .container {
   padding: 80px 55px;
 }
-main #sec5 .container .wrap h4 {
+main#aboutMain #sec5 .container .wrap h4 {
   font-family: "Pretendard Variable";
   font-weight: 400;
   font-size: 26px;
@@ -383,15 +478,15 @@ main #sec5 .container .wrap h4 {
   text-align: center;
   margin-bottom: 40px;
 }
-main #sec5 .container .wrap h4 span {
+main#aboutMain #sec5 .container .wrap h4 span {
   color: #FF5C35;
 }
-main #sec5 .container .wrap .circle-area {
+main#aboutMain #sec5 .container .wrap .circle-area {
   width: 100%;
   height: 450px;
   position: relative;
 }
-main #sec5 .container .wrap .circle-area .circle {
+main#aboutMain #sec5 .container .wrap .circle-area .circle {
   position: absolute;
   height: 450px;
   width: 450px;
@@ -399,7 +494,7 @@ main #sec5 .container .wrap .circle-area .circle {
   background-color: #FFFFFF;
   text-align: center;
 }
-main #sec5 .container .wrap .circle-area .circle h3 {
+main#aboutMain #sec5 .container .wrap .circle-area .circle h3 {
   font-family: "Gotham";
   font-weight: 600;
   font-size: 32px;
@@ -407,41 +502,41 @@ main #sec5 .container .wrap .circle-area .circle h3 {
   line-height: 38px;
   padding: 192px 0 10px 0;
 }
-main #sec5 .container .wrap .circle-area .circle span {
+main#aboutMain #sec5 .container .wrap .circle-area .circle span {
   font-family: "Pretendard Variable";
   font-weight: 400;
   font-size: 16px;
   color: #000000;
   line-height: 19px;
 }
-main #sec5 .container .wrap .circle-area .circle.circle1 {
+main#aboutMain #sec5 .container .wrap .circle-area .circle.circle1 {
   left: 0;
 }
-main #sec5 .container .wrap .circle-area .circle.circle2 {
+main#aboutMain #sec5 .container .wrap .circle-area .circle.circle2 {
   background-color: #FF5C35;
   color: #FFFFFF;
   z-index: 2;
   left: 50%;
   margin-left: -225px;
 }
-main #sec5 .container .wrap .circle-area .circle.circle3 {
+main#aboutMain #sec5 .container .wrap .circle-area .circle.circle3 {
   right: 0;
 }
-main #sec6 {
+main#aboutMain #sec6 {
   background: #00B21D;
 }
-main #sec6 .container {
+main#aboutMain #sec6 .container {
   padding: 80px 55px;
 }
-main #sec6 .container .wrap {
+main#aboutMain #sec6 .container .wrap {
   display: flex;
   position: relative;
 }
-main #sec6 .container .wrap .left-area {
+main#aboutMain #sec6 .container .wrap .left-area {
   text-align: left;
   align-items: left;
 }
-main #sec6 .container .wrap .left-area h2 {
+main#aboutMain #sec6 .container .wrap .left-area h2 {
   font-family: "Pretendard Variable";
   font-weight: 700;
   font-size: 48px;
@@ -449,10 +544,10 @@ main #sec6 .container .wrap .left-area h2 {
   line-height: 58px;
   text-align: left;
 }
-main #sec6 .container .wrap .left-area .text-box {
+main#aboutMain #sec6 .container .wrap .left-area .text-box {
   padding: 40px 0;
 }
-main #sec6 .container .wrap .left-area .text-box p {
+main#aboutMain #sec6 .container .wrap .left-area .text-box p {
   font-family: "Pretendard Variable";
   font-weight: 300;
   font-size: 16px;
@@ -462,7 +557,7 @@ main #sec6 .container .wrap .left-area .text-box p {
   text-align: left;
   margin: 10px 0;
 }
-main #sec6 .container .wrap .left-area a {
+main#aboutMain #sec6 .container .wrap .left-area a {
   display: inline-block;
   width: 270px;
   height: 56px;
@@ -477,22 +572,22 @@ main #sec6 .container .wrap .left-area a {
   line-height: 56px;
   transition: all 0.3s ease-in-out;
 }
-main #sec6 .container .wrap .left-area a:hover {
+main#aboutMain #sec6 .container .wrap .left-area a:hover {
   filter: brightness(0.9);
 }
-main #sec6 .container .wrap .right-area {
+main#aboutMain #sec6 .container .wrap .right-area {
   width: 571px;
   height: 379px;
   position: absolute;
   right: 0;
   bottom: 108px;
 }
-main #sec6 .container .wrap .right-area img {
+main#aboutMain #sec6 .container .wrap .right-area img {
   width: 571px;
   height: 379px;
   border-radius: 8px;
 }
-main #sec6 .container .wrap .right-area span {
+main#aboutMain #sec6 .container .wrap .right-area span {
   background: #FFFFFF;
   font-family: "Pretendard Variable";
   font-weight: 700;
@@ -506,27 +601,27 @@ main #sec6 .container .wrap .right-area span {
   z-index: 2;
   border-radius: 8px;
 }
-main #sec7 {
+main#aboutMain #sec7 {
   background: #FF5C35;
 }
-main #sec7 .container {
+main#aboutMain #sec7 .container {
   padding: 80px 55px;
 }
-main #sec7 .container .wrap {
+main#aboutMain #sec7 .container .wrap {
   position: relative;
 }
-main #sec7 .container .wrap .area {
+main#aboutMain #sec7 .container .wrap .area {
   display: flex;
   position: relative;
 }
-main #sec7 .container .wrap .area h2 {
+main#aboutMain #sec7 .container .wrap .area h2 {
   font-family: "Pretendard Variable";
   font-weight: 700;
   font-size: 48px;
   color: #FFFFFF;
   line-height: 58px;
 }
-main #sec7 .container .wrap .area p {
+main#aboutMain #sec7 .container .wrap .area p {
   font-family: "Pretendard Variable";
   font-weight: 300;
   font-size: 16px;
@@ -535,35 +630,35 @@ main #sec7 .container .wrap .area p {
   width: 370px;
   margin: 5px 0;
 }
-main #sec7 .container .wrap .area img {
+main#aboutMain #sec7 .container .wrap .area img {
   width: 670px;
   border-radius: 12px;
 }
-main #sec7 .container .wrap .area .top-box {
+main#aboutMain #sec7 .container .wrap .area .top-box {
   position: absolute;
   top: 0;
 }
-main #sec7 .container .wrap .area .bot-box {
+main#aboutMain #sec7 .container .wrap .area .bot-box {
   position: absolute;
   bottom: 0;
 }
-main #sec7 .container .wrap .area.area1 {
+main#aboutMain #sec7 .container .wrap .area.area1 {
   height: 670px;
 }
-main #sec7 .container .wrap .area.area1 .left-box {
+main#aboutMain #sec7 .container .wrap .area.area1 .left-box {
   min-width: 500px;
 }
-main #sec7 .container .wrap .area.area1 .left-box .top-box span {
+main#aboutMain #sec7 .container .wrap .area.area1 .left-box .top-box span {
   font-family: "Pretendard Variable";
   font-weight: 400;
   font-size: 26px;
   color: #FFFFFF;
   line-height: 31px;
 }
-main #sec7 .container .wrap .area.area1 .left-box .top-box h2 {
+main#aboutMain #sec7 .container .wrap .area.area1 .left-box .top-box h2 {
   margin-top: 10px;
 }
-main #sec7 .container .wrap .area.area1 .left-box .bot-box h3 {
+main#aboutMain #sec7 .container .wrap .area.area1 .left-box .bot-box h3 {
   font-family: "Gotham";
   font-weight: 600;
   font-size: 32px;
@@ -571,53 +666,53 @@ main #sec7 .container .wrap .area.area1 .left-box .bot-box h3 {
   line-height: 38px;
   margin-bottom: 10px;
 }
-main #sec7 .container .wrap .area.area1 .right-box {
+main#aboutMain #sec7 .container .wrap .area.area1 .right-box {
   min-width: 670px;
   position: absolute;
   right: 0;
 }
-main #sec7 .container .wrap .area.area1 .right-box img {
+main#aboutMain #sec7 .container .wrap .area.area1 .right-box img {
   position: absolute;
   right: 0;
 }
-main #sec7 .container .wrap .area.area2 {
+main#aboutMain #sec7 .container .wrap .area.area2 {
   margin-top: 159px;
   height: 502.5px;
 }
-main #sec7 .container .wrap .area.area2 .left-box {
+main#aboutMain #sec7 .container .wrap .area.area2 .left-box {
   min-width: 500px;
 }
-main #sec7 .container .wrap .area.area2 .right-box {
+main#aboutMain #sec7 .container .wrap .area.area2 .right-box {
   min-width: 670px;
   position: absolute;
   right: 0;
 }
-main #sec7 .container .wrap .area.area3 {
+main#aboutMain #sec7 .container .wrap .area.area3 {
   margin-top: 159px;
   height: 502.5px;
 }
-main #sec7 .container .wrap .area.area3 .left-box {
+main#aboutMain #sec7 .container .wrap .area.area3 .left-box {
   min-width: 670px;
 }
-main #sec7 .container .wrap .area.area3 .right-box {
+main#aboutMain #sec7 .container .wrap .area.area3 .right-box {
   min-width: 500px;
   position: absolute;
   right: 0;
 }
-main #sec7 .container .wrap .area.area3 .right-box .bot-box {
+main#aboutMain #sec7 .container .wrap .area.area3 .right-box .bot-box {
   bottom: -502.5px;
 }
-main #sec8 {
+main#aboutMain #sec8 {
   background: #FFF2DF;
 }
-main #sec8 .container {
+main#aboutMain #sec8 .container {
   padding: 80px 0;
 }
-main #sec8 .container .wrap {
+main#aboutMain #sec8 .container .wrap {
   width: 100%;
   position: relative;
 }
-main #sec8 .container .wrap h2 {
+main#aboutMain #sec8 .container .wrap h2 {
   font-family: "Gotham";
   font-weight: 600;
   font-size: 48px;
@@ -625,17 +720,17 @@ main #sec8 .container .wrap h2 {
   line-height: 58px;
   padding-left: 55px;
 }
-main #sec8 .container .wrap .top-area ul.record-box {
+main#aboutMain #sec8 .container .wrap .top-area ul.record-box {
   margin: 80px 0 160px 0;
   display: flex;
   padding: 40px;
   position: relative;
 }
-main #sec8 .container .wrap .top-area ul.record-box li {
+main#aboutMain #sec8 .container .wrap .top-area ul.record-box li {
   width: 33.333%;
   padding: 15px;
 }
-main #sec8 .container .wrap .top-area ul.record-box li div.record {
+main#aboutMain #sec8 .container .wrap .top-area ul.record-box li div.record {
   position: relative;
   width: 100%;
   padding-bottom: 100%;
@@ -644,7 +739,7 @@ main #sec8 .container .wrap .top-area ul.record-box li div.record {
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-main #sec8 .container .wrap .top-area ul.record-box li div.record i {
+main#aboutMain #sec8 .container .wrap .top-area ul.record-box li div.record i {
   width: 50px;
   height: 50px;
   background: #FF5C35;
@@ -653,7 +748,7 @@ main #sec8 .container .wrap .top-area ul.record-box li div.record i {
   left: 40px;
   display: inline-block;
 }
-main #sec8 .container .wrap .top-area ul.record-box li div.record span {
+main#aboutMain #sec8 .container .wrap .top-area ul.record-box li div.record span {
   font-family: "Pretendard Variable";
   font-weight: 400;
   font-size: 26px;
@@ -663,7 +758,7 @@ main #sec8 .container .wrap .top-area ul.record-box li div.record span {
   bottom: 98px;
   right: 40px;
 }
-main #sec8 .container .wrap .top-area ul.record-box li div.record b {
+main#aboutMain #sec8 .container .wrap .top-area ul.record-box li div.record b {
   font-family: "Pretendard Variable";
   font-weight: 700;
   font-size: 40px;
@@ -673,24 +768,24 @@ main #sec8 .container .wrap .top-area ul.record-box li div.record b {
   bottom: 40px;
   right: 40px;
 }
-main #sec8 .container .wrap .bot-area {
+main#aboutMain #sec8 .container .wrap .bot-area {
   display: flex;
   position: relative;
   padding: 0 55px;
 }
-main #sec8 .container .wrap .bot-area .left-box {
+main#aboutMain #sec8 .container .wrap .bot-area .left-box {
   position: absolute;
   left: 0;
   top: 0;
 }
-main #sec8 .container .wrap .bot-area .right-box {
+main#aboutMain #sec8 .container .wrap .bot-area .right-box {
   width: 100%;
   text-align: right;
 }
-main #sec8 .container .wrap .bot-area .right-box li {
+main#aboutMain #sec8 .container .wrap .bot-area .right-box li {
   margin-bottom: 20px;
 }
-main #sec8 .container .wrap .bot-area .right-box li a {
+main#aboutMain #sec8 .container .wrap .bot-area .right-box li a {
   display: inline-block;
   position: relative;
   background: #FFFFFF;
@@ -707,7 +802,7 @@ main #sec8 .container .wrap .bot-area .right-box li a {
   line-height: 80px;
   transition: all 0.3s ease-in-out;
 }
-main #sec8 .container .wrap .bot-area .right-box li a::after {
+main#aboutMain #sec8 .container .wrap .bot-area .right-box li a::after {
   content: ">";
   position: absolute;
   color: #FF5C35;
@@ -715,6 +810,518 @@ main #sec8 .container .wrap .bot-area .right-box li a::after {
   font-weight: 100;
   font-size: 40px;
 }
-main #sec8 .container .wrap .bot-area .right-box li a:hover {
+main#aboutMain #sec8 .container .wrap .bot-area .right-box li a:hover {
   filter: brightness(0.9);
+}
+
+main#serviceMain {
+  width: 100%;
+  position: relative;
+}
+main#serviceMain #sec1 {
+  height: 100vh;
+  width: 100%;
+  transition: all 0.3s;
+  background: url(../img/service/service_main_1.jpg) 50% 100% no-repeat;
+  background-size: cover;
+}
+main#serviceMain #sec1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 2s;
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+  background: url(../img/service/service_main_2.jpg) 50% 100% no-repeat;
+  background-size: cover;
+}
+main#serviceMain #sec1 .title-box {
+  padding-top: 152px;
+}
+main#serviceMain #sec1 .title-box h2 {
+  font-family: "Pretendard Variable";
+  font-weight: 800;
+  font-size: 160px;
+  color: #FFFFFF;
+  line-height: 192px;
+  opacity: 0;
+  text-align: center;
+}
+main#serviceMain #sec1 .title-box h2:nth-child(2) {
+  color: #ffe8d9;
+}
+main#serviceMain #sec1 .text-box {
+  padding-top: 60px;
+  opacity: 0;
+}
+main#serviceMain #sec1 .text-box p {
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 26px;
+  color: #FFFFFF;
+  line-height: 31px;
+  text-align: center;
+}
+main#serviceMain #sec1.on::before {
+  opacity: 1;
+}
+main#serviceMain #sec2 {
+  width: 100%;
+  background: #F5F5F5;
+}
+main#serviceMain #sec2 .container {
+  padding: 80px 55px 0 55px;
+}
+main#serviceMain #sec2 .container .wrap .area {
+  padding-bottom: 160px;
+}
+main#serviceMain #sec2 .container .wrap .area h2 {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 48px;
+  color: #000000;
+  line-height: 58px;
+}
+main#serviceMain #sec2 .container .wrap .area h2 i {
+  color: #FF5C35;
+}
+main#serviceMain #sec2 .container .wrap .area p {
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  line-height: 160%;
+  padding: 20px 0 40px 0;
+}
+main#serviceMain #sec2 .container .wrap .area.area1 ul {
+  display: flex;
+  margin-left: -15px;
+}
+main#serviceMain #sec2 .container .wrap .area.area1 ul li {
+  width: 370px;
+  height: 370px;
+  background: #FFFFFF;
+  position: relative;
+  padding: 30px 30px 30px 30px;
+  border: 1px solid #8E8E93;
+  border-radius: 16px;
+  margin: 15px;
+  text-align: center;
+}
+main#serviceMain #sec2 .container .wrap .area.area1 ul li h3.top {
+  font-family: "Gotham";
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  line-height: 19px;
+}
+main#serviceMain #sec2 .container .wrap .area.area1 ul li .middle {
+  padding: 80px 0;
+}
+main#serviceMain #sec2 .container .wrap .area.area1 ul li .middle span {
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  line-height: 160%;
+}
+main#serviceMain #sec2 .container .wrap .area.area1 ul li .middle h2 {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 40px;
+  color: #000000;
+  line-height: 160%;
+}
+main#serviceMain #sec2 .container .wrap .area.area1 ul li a {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  display: inline-block;
+  width: 310px;
+  background: #FF5C35;
+  text-align: center;
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 56px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+main#serviceMain #sec2 .container .wrap .area.area2 .bx-wrapper {
+  background: none;
+  overflow: visible;
+  box-shadow: none;
+  border: none;
+  max-width: 100% !important;
+  width: 100%;
+}
+main#serviceMain #sec2 .container .wrap .area.area2 li {
+  width: 370px;
+  height: 370px;
+  border: 1px solid #8E8E93;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+main#serviceMain #sec2 .container .wrap .area.area2 li i {
+  display: inline-block;
+  width: 92px;
+  height: 42px;
+  background: #FF5C35;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+main#serviceMain #sec2 .container .wrap .area.area2 li h2 {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  text-align: right;
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 36px;
+  color: #000000;
+  line-height: 43px;
+}
+main#serviceMain #sec2 .container .wrap .area.area2 li h2 span {
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  line-height: 160%;
+  padding-top: 10px;
+}
+main#serviceMain #sec2 .container .wrap .area.area3 li {
+  background: #FFFFFF;
+  width: 370px;
+  height: 370px;
+  border: 1px solid #8E8E93;
+  border-radius: 16px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+main#serviceMain #sec2 .container .wrap .area.area3 li i {
+  display: inline-block;
+  width: 92px;
+  height: 42px;
+  background: #FF5C35;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+main#serviceMain #sec2 .container .wrap .area.area3 li h2 {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  text-align: right;
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 36px;
+  color: #000000;
+  line-height: 43px;
+}
+
+main#storyMain {
+  width: 100%;
+  position: relative;
+  background-color: #00A7E1;
+}
+main#storyMain #sec1 {
+  height: 100vh;
+  width: 100%;
+  transition: all 0.3s;
+  background: url(../img/story/story_main_1.png) 50% 45% no-repeat;
+  background-size: 314px;
+}
+main#storyMain #sec1.on::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 2s;
+  height: 100vh;
+  width: 100%;
+  background: url(../img/story/story_main_2.png) 50% 45% no-repeat;
+  background-size: 314px;
+  backdrop-filter: brightness(0.7) saturate(150%);
+}
+main#storyMain #sec1 .title-box {
+  position: relative;
+  padding-top: 180px;
+  z-index: 3;
+}
+main#storyMain #sec1 .title-box h2 {
+  font-family: "Pretendard Variable";
+  font-weight: 800;
+  font-size: 160px;
+  color: #FFFFFF;
+  line-height: 192px;
+  opacity: 1;
+  text-align: center;
+}
+main#storyMain #sec1 .title-box h2:nth-child(2) {
+  color: #E2FF56;
+}
+main#storyMain #sec1 .text-box {
+  position: relative;
+  z-index: 3;
+  padding-top: 85px;
+  opacity: 1;
+}
+main#storyMain #sec1 .text-box p {
+  font-family: "Pretendard Variable";
+  font-weight: 300;
+  font-size: 26px;
+  color: #FFFFFF;
+  line-height: 31px;
+  text-align: center;
+}
+main#storyMain #sec1.on::before {
+  opacity: 1;
+}
+main#storyMain #sec2 {
+  background: #00A7E1;
+}
+main#storyMain #sec2 .container {
+  padding: 80px 55px;
+}
+main#storyMain #sec2 .container .wrap .area {
+  display: flex;
+  height: 502.5px;
+  width: 100%;
+  position: relative;
+}
+main#storyMain #sec2 .container .wrap .area img {
+  width: 670px;
+  border-radius: 16px;
+}
+main#storyMain #sec2 .container .wrap .area h2 {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 48px;
+  color: #FFFFFF;
+  line-height: 58px;
+}
+main#storyMain #sec2 .container .wrap .area p {
+  margin: 10px 0;
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 160%;
+}
+main#storyMain #sec2 .container .wrap .area p i {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffeb34;
+  line-height: 160%;
+}
+main#storyMain #sec2 .container .wrap .area .text-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+main#storyMain #sec2 .container .wrap .area .right-box {
+  position: absolute;
+  right: 0;
+}
+main#storyMain #sec2 .container .wrap .area.area1 {
+  margin-bottom: 160px;
+}
+main#storyMain #sec2 .container .wrap .area.area1 .left-box p {
+  width: 382px;
+}
+main#storyMain #sec2 .container .wrap .area.area2 {
+  margin-bottom: 160px;
+}
+main#storyMain #sec2 .container .wrap .area.area2 .right-box {
+  right: 0;
+  height: 100%;
+}
+main#storyMain #sec2 .container .wrap .area.area3 .left-box p {
+  width: 370px;
+}
+main#storyMain #sec3 .container {
+  background: #FFF2DF;
+  padding-bottom: 160px;
+}
+main#storyMain #sec3 .container .wrap .top-area {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(255, 242, 223) 100%);
+}
+main#storyMain #sec3 .container .wrap .top-area h3 {
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 26px;
+  color: #FF5C35;
+  line-height: 31px;
+  padding-top: 130px;
+}
+main#storyMain #sec3 .container .wrap .top-area h2 {
+  font-family: "Pretendard Variable";
+  font-weight: 800;
+  font-size: 58px;
+  color: #FF5C35;
+  line-height: 70px;
+  padding: 10px 0 111px 0;
+}
+main#storyMain #sec3 .container .wrap .top-area img {
+  width: 570px;
+}
+main#storyMain #sec3 .container .wrap .bot-area {
+  width: 100%;
+  display: flex;
+  margin-top: 160px;
+  height: 370px;
+}
+main#storyMain #sec3 .container .wrap .bot-area .left-box {
+  width: 50%;
+  text-align: center;
+}
+main#storyMain #sec3 .container .wrap .bot-area .left-box img {
+  height: 100%;
+}
+main#storyMain #sec3 .container .wrap .bot-area .center-box i {
+  width: 1px;
+  height: 370px;
+  border-left: 1px solid #000000;
+  display: inline-block;
+}
+main#storyMain #sec3 .container .wrap .bot-area .right-box {
+  width: 50%;
+  display: flex;
+  position: relative;
+}
+main#storyMain #sec3 .container .wrap .bot-area .right-box .text-box-top {
+  margin: 0 auto;
+  top: 0;
+  position: relative;
+}
+main#storyMain #sec3 .container .wrap .bot-area .right-box .text-box-top h3 {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 48px;
+  color: #FF5C35;
+  line-height: 58px;
+}
+main#storyMain #sec3 .container .wrap .bot-area .right-box .text-box-top p {
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  line-height: 160%;
+  position: absolute;
+  bottom: 0;
+}
+
+main#peopleMain {
+  width: 100%;
+  position: relative;
+}
+main#peopleMain #sec1 {
+  height: 100vh;
+  width: 100%;
+  transition: all 0.3s;
+  background: url(../img/people/people_main.jpg) 50% 100% no-repeat;
+  background-size: cover;
+}
+main#peopleMain #sec1.on::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 2s;
+  z-index: 0;
+  height: 100vh;
+  width: 100%;
+  backdrop-filter: brightness(80%);
+}
+main#peopleMain #sec1 .title-box {
+  padding-top: 152px;
+  position: relative;
+  z-index: 2;
+}
+main#peopleMain #sec1 .title-box h2 {
+  font-family: "Pretendard Variable";
+  font-weight: 800;
+  font-size: 160px;
+  color: #FFFFFF;
+  line-height: 192px;
+  text-align: center;
+}
+main#peopleMain #sec1 .title-box h2:nth-child(2) {
+  color: #FF5C35;
+}
+main#peopleMain #sec1 .text-box {
+  padding-top: 60px;
+  position: relative;
+  z-index: 2;
+}
+main#peopleMain #sec1 .text-box p {
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 26px;
+  color: #FFFFFF;
+  line-height: 31px;
+  text-align: center;
+}
+main#peopleMain #sec1 .text-box p i {
+  color: #FF5C35;
+}
+main#peopleMain #sec1.on::before {
+  opacity: 1;
+}
+main#peopleMain #sec2 {
+  background: #F5F5F5;
+}
+main#peopleMain #sec2 .title-area {
+  text-align: center;
+  padding: 80px 0 160px 0;
+}
+main#peopleMain #sec2 .title-area h2 {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 48px;
+  color: #000000;
+  line-height: 58px;
+  width: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+main#peopleMain #sec2 .title-area h2 i {
+  color: #FF5C35;
+  position: absolute;
+}
+main#peopleMain #sec2 .title-area h2 i:nth-child(1) {
+  left: 18px;
+}
+main#peopleMain #sec2 .title-area h2 i:nth-child(2) {
+  right: 18px;
+}
+main#peopleMain #sec2 .card-area {
+  width: 100%;
+  padding: 0 45px;
+}
+main#peopleMain #sec2 .card-area ul {
+  width: 100%;
+  border: 1px solid red;
+  display: flex;
+  flex-flow: row wrap;
+}
+main#peopleMain #sec2 .card-area ul li {
+  width: 14.2857143%;
+  padding: 10px;
+  border: 1px solid blue;
+}
+main#peopleMain #sec2 .card-area ul li .wrap {
+  background: #8E8E93;
+  width: 100%;
+  padding-bottom: 129%;
 }/*# sourceMappingURL=sytle.css.map */
