@@ -56,7 +56,7 @@ header {
   z-index: 15;
 }
 header .container {
-  padding: 16px 32px 16px 55px;
+  padding: 16px 55px 16px 55px;
 }
 header .container .wrap nav {
   display: flex;
@@ -69,7 +69,8 @@ header .container .wrap nav h1.left-box a {
   left: 0;
   width: 32px;
   height: 32px;
-  background: white;
+  background: url(../img/icon/about/home.svg) 50% 50% no-repeat;
+  background-size: cover;
 }
 header .container .wrap nav ul.right-box {
   width: 100%;
@@ -90,13 +91,13 @@ header .container .wrap nav ul.right-box li:hover {
 header .container .wrap nav ul.right-box li a {
   font-family: "Pretendard Variable";
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
   color: #FFFFFF;
   line-height: 14px;
-  transition: all 0.3s;
+  transition: all 0.2s ease-in-out;
 }
 header .container .wrap nav ul.right-box li a:hover {
-  opacity: 0.8;
+  filter: brightness(0.8);
 }
 
 main#aboutMain {
@@ -110,7 +111,7 @@ main#aboutMain #sec1 {
   position: relative;
 }
 main#aboutMain #sec1 .container {
-  width: 100%;
+  width: 1200px;
 }
 main#aboutMain #sec1 .container .wrap {
   width: 100%;
@@ -425,10 +426,10 @@ main#aboutMain #sec3 .container .wrap .btn-area a {
   line-height: 56px;
   border-radius: 8px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 main#aboutMain #sec3 .container .wrap .btn-area a:hover {
-  filter: brightness(0.9);
+  filter: brightness(0.8);
 }
 main#aboutMain #sec4 {
   background: #00A7E1;
@@ -570,7 +571,7 @@ main#aboutMain #sec6 .container .wrap .left-area a {
   font-size: 16px;
   color: #FFFFFF;
   line-height: 56px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 main#aboutMain #sec6 .container .wrap .left-area a:hover {
   filter: brightness(0.9);
@@ -800,7 +801,7 @@ main#aboutMain #sec8 .container .wrap .bot-area .right-box li a {
   font-size: 26px;
   color: #000000;
   line-height: 80px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 main#aboutMain #sec8 .container .wrap .bot-area .right-box li a::after {
   content: ">";
@@ -821,6 +822,7 @@ main#serviceMain {
 main#serviceMain #sec1 {
   height: 100vh;
   width: 100%;
+  position: relative;
   transition: all 0.3s;
   background: url(../img/service/service_main_1.jpg) 50% 100% no-repeat;
   background-size: cover;
@@ -831,14 +833,23 @@ main#serviceMain #sec1::before {
   top: 0;
   left: 0;
   transition: all 2s;
+  z-index: 2;
   height: 100vh;
   width: 100%;
   opacity: 0;
   background: url(../img/service/service_main_2.jpg) 50% 100% no-repeat;
   background-size: cover;
 }
+main#serviceMain #sec1.on::before {
+  opacity: 1;
+}
 main#serviceMain #sec1 .title-box {
-  padding-top: 152px;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  margin-top: -240.5px;
+  width: 100%;
+  text-align: center;
 }
 main#serviceMain #sec1 .title-box h2 {
   font-family: "Pretendard Variable";
@@ -846,15 +857,14 @@ main#serviceMain #sec1 .title-box h2 {
   font-size: 160px;
   color: #FFFFFF;
   line-height: 192px;
-  opacity: 0;
   text-align: center;
 }
 main#serviceMain #sec1 .title-box h2:nth-child(2) {
   color: #ffe8d9;
 }
 main#serviceMain #sec1 .text-box {
-  padding-top: 60px;
   opacity: 0;
+  padding-top: 35px;
 }
 main#serviceMain #sec1 .text-box p {
   font-family: "Pretendard Variable";
@@ -862,20 +872,18 @@ main#serviceMain #sec1 .text-box p {
   font-size: 26px;
   color: #FFFFFF;
   line-height: 31px;
-  text-align: center;
-}
-main#serviceMain #sec1.on::before {
-  opacity: 1;
 }
 main#serviceMain #sec2 {
   width: 100%;
   background: #F5F5F5;
 }
 main#serviceMain #sec2 .container {
-  padding: 80px 55px 0 55px;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 120px 0;
 }
 main#serviceMain #sec2 .container .wrap .area {
-  padding-bottom: 160px;
+  padding-bottom: 120px;
 }
 main#serviceMain #sec2 .container .wrap .area h2 {
   font-family: "Pretendard Variable";
@@ -886,6 +894,8 @@ main#serviceMain #sec2 .container .wrap .area h2 {
 }
 main#serviceMain #sec2 .container .wrap .area h2 i {
   color: #FF5C35;
+  padding: 0 20px;
+  vertical-align: baseline;
 }
 main#serviceMain #sec2 .container .wrap .area p {
   font-family: "Pretendard Variable";
@@ -893,7 +903,7 @@ main#serviceMain #sec2 .container .wrap .area p {
   font-size: 16px;
   color: #000000;
   line-height: 160%;
-  padding: 20px 0 40px 0;
+  padding: 30px 0 50px 0;
 }
 main#serviceMain #sec2 .container .wrap .area.area1 ul {
   display: flex;
@@ -905,14 +915,14 @@ main#serviceMain #sec2 .container .wrap .area.area1 ul li {
   background: #FFFFFF;
   position: relative;
   padding: 30px 30px 30px 30px;
-  border: 1px solid #8E8E93;
-  border-radius: 16px;
   margin: 15px;
   text-align: center;
+  border: 1px solid #8E8E93;
+  border-radius: 16px;
 }
 main#serviceMain #sec2 .container .wrap .area.area1 ul li h3.top {
   font-family: "Gotham";
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
   color: #000000;
   line-height: 19px;
@@ -935,20 +945,23 @@ main#serviceMain #sec2 .container .wrap .area.area1 ul li .middle h2 {
   line-height: 160%;
 }
 main#serviceMain #sec2 .container .wrap .area.area1 ul li a {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-  display: inline-block;
-  width: 310px;
-  background: #FF5C35;
-  text-align: center;
   font-family: "Pretendard Variable";
   font-weight: 700;
   font-size: 16px;
   color: #FFFFFF;
   line-height: 56px;
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+  display: inline-block;
+  width: 310px;
+  background: #FF5C35;
+  text-align: center;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+}
+main#serviceMain #sec2 .container .wrap .area.area2 p {
+  padding-bottom: 70px;
 }
 main#serviceMain #sec2 .container .wrap .area.area2 .bx-wrapper {
   background: none;
@@ -959,8 +972,8 @@ main#serviceMain #sec2 .container .wrap .area.area2 .bx-wrapper {
   width: 100%;
 }
 main#serviceMain #sec2 .container .wrap .area.area2 li {
-  width: 370px;
-  height: 370px;
+  width: 360px;
+  height: 360px;
   border: 1px solid #8E8E93;
   background: #FFFFFF;
   border-radius: 16px;
@@ -968,13 +981,9 @@ main#serviceMain #sec2 .container .wrap .area.area2 li {
   position: relative;
 }
 main#serviceMain #sec2 .container .wrap .area.area2 li i {
-  display: inline-block;
-  width: 92px;
-  height: 42px;
-  background: #FF5C35;
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 35px;
+  left: 35px;
 }
 main#serviceMain #sec2 .container .wrap .area.area2 li h2 {
   position: absolute;
@@ -995,6 +1004,20 @@ main#serviceMain #sec2 .container .wrap .area.area2 li h2 span {
   line-height: 160%;
   padding-top: 10px;
 }
+main#serviceMain #sec2 .container .wrap .area.area3 {
+  padding-bottom: 0;
+}
+main#serviceMain #sec2 .container .wrap .area.area3 p {
+  padding-bottom: 70px;
+}
+main#serviceMain #sec2 .container .wrap .area.area3 .bx-wrapper {
+  background: none;
+  overflow: visible;
+  box-shadow: none;
+  border: none;
+  max-width: 100% !important;
+  width: 100%;
+}
 main#serviceMain #sec2 .container .wrap .area.area3 li {
   background: #FFFFFF;
   width: 370px;
@@ -1005,13 +1028,9 @@ main#serviceMain #sec2 .container .wrap .area.area3 li {
   position: relative;
 }
 main#serviceMain #sec2 .container .wrap .area.area3 li i {
-  display: inline-block;
-  width: 92px;
-  height: 42px;
-  background: #FF5C35;
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 35px;
+  left: 35px;
 }
 main#serviceMain #sec2 .container .wrap .area.area3 li h2 {
   position: absolute;
@@ -1079,9 +1098,6 @@ main#storyMain #sec1 .text-box p {
   color: #FFFFFF;
   line-height: 31px;
   text-align: center;
-}
-main#storyMain #sec1.on::before {
-  opacity: 1;
 }
 main#storyMain #sec2 {
   background: #00A7E1;
@@ -1228,25 +1244,33 @@ main#peopleMain {
 main#peopleMain #sec1 {
   height: 100vh;
   width: 100%;
+  position: relative;
   transition: all 0.3s;
   background: url(../img/people/people_main.jpg) 50% 100% no-repeat;
   background-size: cover;
 }
-main#peopleMain #sec1.on::before {
+main#peopleMain #sec1::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  transition: all 2s;
   z-index: 0;
   height: 100vh;
   width: 100%;
   backdrop-filter: brightness(80%);
+  opacity: 0;
+}
+main#peopleMain #sec1.on::before {
+  opacity: 1;
 }
 main#peopleMain #sec1 .title-box {
-  padding-top: 152px;
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  margin-top: -243px;
+  opacity: 0;
 }
 main#peopleMain #sec1 .title-box h2 {
   font-family: "Pretendard Variable";
@@ -1259,31 +1283,29 @@ main#peopleMain #sec1 .title-box h2 {
 main#peopleMain #sec1 .title-box h2:nth-child(2) {
   color: #FF5C35;
 }
-main#peopleMain #sec1 .text-box {
-  padding-top: 60px;
+main#peopleMain #sec1 .title-box .text-box {
+  padding-top: 40px;
   position: relative;
   z-index: 2;
+  opacity: 0;
 }
-main#peopleMain #sec1 .text-box p {
+main#peopleMain #sec1 .title-box .text-box p {
   font-family: "Pretendard Variable";
   font-weight: 400;
   font-size: 26px;
   color: #FFFFFF;
   line-height: 31px;
-  text-align: center;
 }
-main#peopleMain #sec1 .text-box p i {
+main#peopleMain #sec1 .title-box .text-box p i {
   color: #FF5C35;
-}
-main#peopleMain #sec1.on::before {
-  opacity: 1;
+  vertical-align: baseline;
 }
 main#peopleMain #sec2 {
   background: #F5F5F5;
 }
 main#peopleMain #sec2 .title-area {
   text-align: center;
-  padding: 80px 0 160px 0;
+  padding: 120px 0 140px 0;
 }
 main#peopleMain #sec2 .title-area h2 {
   font-family: "Pretendard Variable";
@@ -1298,6 +1320,7 @@ main#peopleMain #sec2 .title-area h2 {
 main#peopleMain #sec2 .title-area h2 i {
   color: #FF5C35;
   position: absolute;
+  top: 8px;
 }
 main#peopleMain #sec2 .title-area h2 i:nth-child(1) {
   left: 18px;
@@ -1307,21 +1330,80 @@ main#peopleMain #sec2 .title-area h2 i:nth-child(2) {
 }
 main#peopleMain #sec2 .card-area {
   width: 100%;
-  padding: 0 45px;
+  padding: 0 55px 120px 55px;
 }
 main#peopleMain #sec2 .card-area ul {
   width: 100%;
-  border: 1px solid red;
   display: flex;
   flex-flow: row wrap;
 }
 main#peopleMain #sec2 .card-area ul li {
   width: 14.2857143%;
   padding: 10px;
-  border: 1px solid blue;
+  margin-bottom: 20px;
 }
-main#peopleMain #sec2 .card-area ul li .wrap {
-  background: #8E8E93;
+main#peopleMain #sec2 .card-area ul li .people-card-wrap {
+  background: url() 50% 50% no-repeat;
+  background-size: cover;
   width: 100%;
-  padding-bottom: 129%;
+  padding-bottom: 145%;
+}
+main#peopleMain #sec3 {
+  background: #FFF2DF;
+  text-align: center;
+  padding: 100px 0;
+}
+main#peopleMain #sec3 h2 {
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 48px;
+  color: #000000;
+  line-height: 58px;
+  width: 450px;
+  position: relative;
+  margin: 0 auto;
+}
+main#peopleMain #sec3 h2:nth-child(2) {
+  color: #FF5C35;
+  font-family: "Gotham";
+  font-weight: 600;
+  font-size: 48px;
+  color: #FF5C35;
+  line-height: 60px;
+}
+main#peopleMain #sec3 h2 i {
+  position: absolute;
+  top: -1px;
+  vertical-align: baseline;
+  line-height: 60px;
+}
+main#peopleMain #sec3 h2 i:nth-child(1) {
+  left: 18px;
+}
+main#peopleMain #sec3 h2 i:nth-child(2) {
+  right: 18px;
+}
+main#peopleMain #sec3 p {
+  font-family: "Pretendard Variable";
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  line-height: 160%;
+  padding: 25px 0 40px 0;
+}
+main#peopleMain #sec3 a {
+  display: inline-block;
+  width: 448px;
+  background: #FF5C35;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Pretendard Variable";
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 56px;
+  transition: all 0.2s ease-in-out;
+}
+main#peopleMain #sec3 a:hover {
+  filter: brightness(0.8);
 }/*# sourceMappingURL=sytle.css.map */
