@@ -41,12 +41,16 @@ $about_background : 1,2,3,4;
     font-family:'Gotham';
     font-weight:$weight; font-size:$size; color:$color; line-height: $lineHeight;
 };
+@mixin hoverEvent($brightness){
+    transition: all .2s ease-in-out;
+    &:hover{filter: brightness($brightness);}
+}
 
 // html{overflow: hidden;}
 header{
     position: fixed; width: 100%; height: 64px; z-index: 15;
     .container{
-        padding: 16px 32px 16px 55px;
+        padding: 16px 55px 16px 55px;
         .wrap{
             nav{
                 display: flex; flex-flow: row wrap;
@@ -55,7 +59,8 @@ header{
                     a{
                         position: absolute; top:0; left: 0;
                         width:32px; height:32px;
-                        background:white;
+                        background:url(../img/icon/about/home.svg) 50% 50% no-repeat;
+                        background-size: cover;
                     }
                 }
                 ul.right-box{
@@ -66,9 +71,8 @@ header{
                         &.on{border-bottom: 2px solid #ffffff;}
                         &:hover{border-bottom: 2px solid #ffffff;}
                         a{
-                            @include tit_pretendard(700, 12px,$white,14px);
-                            transition: all .3s;
-                            &:hover{opacity: .8;}
+                            @include tit_pretendard(700, 14px,$white,14px);
+                            @include hoverEvent(.8);
                         }
                     }
                 }
@@ -82,7 +86,7 @@ main#aboutMain{
     #sec1{
         width: 100%; height: 400vh; position: relative;
         .container{
-            width: 100%;
+            width: 1200px;
             .wrap{ 
                 width: 100%;
                 .fixed-page-wrap{
@@ -249,8 +253,7 @@ main#aboutMain{
                         width: 430px; height: 56px; background-color:$orange;
                         @include tit_pretendard(700, 16px, $white, 56px);
                         border-radius: 8px; box-shadow: 0px 2px 8px rgba(0,0,0,.1);
-                        transition: all .3s ease-in-out;
-                        &:hover{filter: brightness(.9);}
+                        @include hoverEvent(.8)
                     }
                 }
             }
@@ -318,8 +321,7 @@ main#aboutMain{
                         display: inline-block; width: 270px; height: 56px;
                         background: $orange; box-shadow: 0 2px 8px rgba(0,0,0,.1); border-radius: 8px;
                         text-align: center; @include tit_pretendard(700, 16px, $white, 56px);
-                        transition: all .3s ease-in-out;
-                        &:hover{filter: brightness(.9);}
+                        @include hoverEvent(.9);
                     }
                 }
                 .right-area{
@@ -363,7 +365,7 @@ main#aboutMain{
                             min-width: 670px; position: absolute; right: 0;
                             img{position: absolute; right: 0;}
                         }
-                    }
+                    } 
                     &.area2{
                         margin-top: 159px; height: 502.5px;
                         .left-box{min-width: 500px;}
@@ -429,10 +431,7 @@ main#aboutMain{
                                     position: absolute; color: $orange;
                                     right: 32px; font-weight: 100; font-size: 40px;
                                 }
-                                transition: all .3s ease-in-out;
-                                &:hover{
-                                    filter: brightness(.9);
-                                }
+                                @include hoverEvent(.9);
                             }
                         }
                     }
@@ -440,25 +439,28 @@ main#aboutMain{
             }
         }
     }
+    
 }
 main#serviceMain{
     width: 100%; position: relative;
     #sec1{
-        height: 100vh; width: 100%;
+        height: 100vh; width: 100%; position: relative;
         transition: all .3s;
         background: url(../img/service/service_main_1.jpg) 50% 100% no-repeat;
         background-size: cover;
         &::before{
             content: ''; position: absolute; top: 0; left: 0;
-            transition: all 2s;
+            transition: all 2s; z-index: 2;
             height: 100vh; width: 100%; opacity: 0;
             background: url(../img/service/service_main_2.jpg) 50% 100% no-repeat;
             background-size: cover;
         }
+        &.on{&::before{opacity: 1;}}
         .title-box{
-            padding-top: 152px; 
+            position: absolute; z-index: 3; top: 50%; margin-top:calc(-481px / 2);
+            width: 100%; text-align: center;
             h2{
-                @include tit_pretendard(800,160px,$white,192px); opacity: 0;
+                @include tit_pretendard(800,160px,$white,192px);
                 text-align: center;
                 &:nth-child(2){
                     color:#ffe8d9;
@@ -466,71 +468,57 @@ main#serviceMain{
             }
         }
         .text-box{
-            padding-top: 60px; opacity: 0;
-            p{
-                @include tit_pretendard(400, 26px, $white, 31px);
-                text-align: center;
-            }
-        }
-        &.on{
-            &::before{
-                opacity: 1;
-            }
+            opacity: 0; padding-top: 35px;
+            p{@include tit_pretendard(400, 26px, $white, 31px);}
         }
     }
     #sec2{
         width: 100%; background: $gray;
         .container{
-            padding: 80px 55px 0 55px;
+            width: 1200px; margin: 0 auto; padding: 120px 0;
             .wrap{
                 .area{
-                    padding-bottom: 160px;
+                    padding-bottom:120px;
                     h2{
-                        @include tit_pretendard(700, 48px, $black, 58px);
-                        i{color:$orange;}
+                        @include tit_pretendard(700, 48px, $black, 58px); 
+                        i{color:$orange; padding:0 20px; vertical-align: baseline; position: relative; top: -3px; }
                     }
-                    p{@include tit_pretendard(400, 16px, $black, 160%); padding: 20px 0 40px 0;}
+                    p{@include tit_pretendard(400, 16px, $black, 160%); padding: 30px 0 50px 0;}
                     &.area1{
                         ul{
                             display: flex; margin-left:-15px;
                             li{
-                                width: 370px; height: 370px; background: $white; 
-                                position: relative;
-                                padding: 30px 30px 30px 30px;
-                                border: 1px solid $darkGray; border-radius: 16px;
-                                margin: 15px; text-align: center;
-                                h3.top{
-                                    @include tit_gotham(400, 16px, $black, 19px);
-                                }
+                                width: 370px; height: 370px; background: $white; position: relative;
+                                padding: 30px 30px 30px 30px; margin: 15px; text-align: center;
+                                border: 1px solid $darkGray; border-radius: 16px;                                
+                                h3.top{@include tit_gotham(600, 16px, $black, 19px);}
                                 .middle{
                                     padding: 80px 0;
                                     span{@include tit_pretendard(400, 16px, $black, 160%);}
                                     h2{@include tit_pretendard(700, 40px, $black, 160%);}
                                 }
                                 a{
-                                    position: absolute; bottom: 30px; left: 30px;
+                                    @include tit_pretendard(700, 16px, $white, 56px);
+                                    position: absolute; bottom: 25px; left: 30px;
                                     display: inline-block; width: 310px;
                                     background: $orange; text-align: center;
-                                    @include tit_pretendard(700, 16px, $white, 56px);
                                     box-shadow: 0px 2px 8px rgba(0,0,0,.1); border-radius: 8px;
                                 }
                             }
                         }
                     }
                     &.area2{
+                        p{padding-bottom: 70px;}
                         .bx-wrapper{
                             background: none; overflow: visible; box-shadow: none;
                             border: none; max-width: 100% !important; width: 100%;
                         }
                         li{
-                            width: 370px; height: 370px; border: 1px solid $darkGray;
+                            width: 360px; height: 360px; border: 1px solid $darkGray;
                             background:$white;
                             border-radius: 16px; box-shadow: 0px 2px 8px rgba(0,0,0,.1);
                             position: relative;
-                            i{
-                                display: inline-block; width: 92px; height: 42px; background: $orange;
-                                position: absolute; top: 40px; left: 40px;
-                            }
+                            i{position: absolute; top: 35px; left: 35px;}
                             h2{
                                 position: absolute; bottom: 40px; right: 40px; text-align: right;
                                 @include tit_pretendard(700, 36px, $black, 43px);
@@ -539,15 +527,18 @@ main#serviceMain{
                         }    
                     }
                     &.area3{
+                        padding-bottom:0;
+                        p{padding-bottom: 70px;}
+                        .bx-wrapper{
+                            background: none; overflow: visible; box-shadow: none;
+                            border: none; max-width: 100% !important; width: 100%;
+                        }
                         li{
                             background:$white;
                             width: 370px; height: 370px; border: 1px solid $darkGray;
                             border-radius: 16px; box-shadow: 0px 2px 8px rgba(0,0,0,.1);
                             position: relative;
-                            i{
-                                display: inline-block; width: 92px; height: 42px; background: $orange;
-                                position: absolute; top: 40px; left: 40px;
-                            }
+                            i{position: absolute; top: 35px; left: 35px;}
                             h2{
                                 position: absolute; bottom: 40px; right: 40px; text-align: right;
                                 @include tit_pretendard(700, 36px, $black, 43px);
@@ -560,11 +551,9 @@ main#serviceMain{
     }
 }
 main#storyMain{
-    width: 100%; position: relative;
-    background-color: $blue;
+    width: 100%; position: relative; background-color: $blue;
     #sec1{
-        height: 100vh; width: 100%;
-        transition: all .3s;
+        height: 100vh; width: 100%; transition: all .3s;
         background: url(../img/story/story_main_1.png) 50% 45% no-repeat;
         background-size: 314px;
         &.on{            
@@ -583,22 +572,14 @@ main#storyMain{
             h2{
                 @include tit_pretendard(800,160px,$white,192px); opacity: 1;
                 text-align: center;
-                &:nth-child(2){
-                    color:$lime;
-                }
+                &:nth-child(2){color:$lime;}
             }
         }
         .text-box{
-            position: relative; z-index: 3;
-            padding-top: 85px; opacity: 1;
+            position: relative; z-index: 3; padding-top: 85px; opacity: 1;
             p{
                 @include tit_pretendard(300, 26px, $white, 31px);
                 text-align: center;
-            }
-        }
-        &.on{
-            &::before{
-                opacity: 1;
             }
         }
     }
@@ -677,40 +658,32 @@ main#storyMain{
 main#peopleMain{
     width: 100%; position: relative;
     #sec1{
-        height: 100vh; width: 100%;
+        height: 100vh; width: 100%; position: relative;
         transition: all .3s;
         background: url(../img/people/people_main.jpg) 50% 100% no-repeat;
         background-size: cover;
-        &.on{
-            &::before{
-                content: ''; position: absolute; top: 0; left: 0;
-                transition: all 2s; z-index: 0;
-                height: 100vh; width: 100%;
-                backdrop-filter: brightness(80%);
-            }
-            
-        }
+        &::before{
+            content: ''; position: absolute; top: 0; left: 0; z-index: 0;
+            height: 100vh; width: 100%; backdrop-filter: brightness(80%);
+            opacity: 0;
+        }  
+        &.on{&::before{opacity: 1;}}
         .title-box{
-            padding-top: 152px; position: relative; z-index: 2;
+            position: absolute; z-index: 3; width: 100%; text-align: center;
+            top: 50%; margin-top:calc(-486px /2);
+            opacity: 0;
             h2{
                 @include tit_pretendard(800,160px,$white,192px);
                 text-align: center;
-                &:nth-child(2){
-                    color:$orange;
+                &:nth-child(2){color:$orange;}
+            }
+            .text-box{
+                padding-top: 40px; position: relative; z-index: 2;
+                opacity: 0;
+                p{
+                    @include tit_pretendard(400, 26px, $white, 31px);
+                    i{color: $orange; vertical-align: baseline;}
                 }
-            }
-        }
-        .text-box{
-            padding-top: 60px; position: relative; z-index: 2;
-            p{
-                @include tit_pretendard(400, 26px, $white, 31px);
-                text-align: center;
-                i{color: $orange;}
-            }
-        }
-        &.on{
-            &::before{
-                opacity: 1;
             }
         }
     }
@@ -718,31 +691,55 @@ main#peopleMain{
         background: $gray;
         .title-area{
             text-align: center;
-            padding: 80px 0 160px 0;
+            padding: 120px 0 140px 0;
             h2{
                 @include tit_pretendard(700, 48px, $black, 58px);
                 width: 400px; position: relative; margin: 0 auto;
                 i{
-                    color: $orange; position: absolute;
+                    color: $orange; position: absolute; top: 8px;
                     &:nth-child(1){left: 18px;}
                     &:nth-child(2){right:18px;}
                 }
             }
         }
         .card-area{
-            width: 100%; padding: 0 45px;
+            width: 100%; padding: 0 55px 120px 55px;
             ul{
-                width: 100%; border: 1px solid red;
+                width: 100%;
                 display: flex; flex-flow: row wrap;
                 li{
                     width: 14.2857143%;
-                    padding: 10px; border: 1px solid blue;
-                    .wrap{
-                        background: #8E8E93;
-                        width: 100%; padding-bottom: 129%;
+                    padding: 10px; margin-bottom: 20px;
+                    .people-card-wrap{
+                        background: url() 50% 50% no-repeat;
+                        background-size: cover;
+                        width: 100%; padding-bottom: 145%;
                     }
                 }
             }
+        }
+    }
+    #sec3{
+        background:$ivory; text-align: center;
+        padding: 100px 0;
+        h2{
+            @include tit_pretendard(700, 48px, $black, 58px);
+            width: 450px; position: relative; margin: 0 auto;
+            &:nth-child(2){color:$orange; @include tit_gotham(600, 48px, $orange, 60px);}
+            i{
+                position: absolute; top: -1px; vertical-align: baseline;
+                line-height: 60px;
+                &:nth-child(1){left: 18px;}
+                &:nth-child(2){right:18px;}
+            }
+        }
+        p{@include tit_pretendard(400, 16px, $black, 160%); padding:25px 0 40px 0;}
+        a{
+            display: inline-block; width: 448px; background:$orange;
+            border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,.1);
+            @include tit_pretendard(700, 16px, $white, 56px);
+            @include hoverEvent(.8);
+    
         }
     }
 }

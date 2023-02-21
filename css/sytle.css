@@ -896,6 +896,8 @@ main#serviceMain #sec2 .container .wrap .area h2 i {
   color: #FF5C35;
   padding: 0 20px;
   vertical-align: baseline;
+  position: relative;
+  top: -3px;
 }
 main#serviceMain #sec2 .container .wrap .area p {
   font-family: "Pretendard Variable";
