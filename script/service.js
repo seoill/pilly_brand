@@ -11,8 +11,8 @@
                 if(!isAnimated){
                     if(e.originalEvent.deltaY<0) return;
                     $('#sec1').addClass('on');
-                    // $('.title-box h2').eq(0).addClass('ani-fadeIn');
-                    // $('.title-box h2').eq(1).addClass('ani-fadeIn');
+                    $('.title-box h2').eq(0).addClass('ani-fadeIn');
+                    $('.title-box h2').eq(1).addClass('ani-fadeIn');
                     $('.text-box').addClass('ani-up2');                    
                     isAnimated = true;
                     setTimeout(function(){
@@ -23,8 +23,8 @@
                     if(isAnimated == true){
                         $('html').css({'overflow':'hidden'});
                         $('#sec1').removeClass('on');
-                        // $('.title-box h2').eq(0).removeClass('ani-fadeIn');
-                        // $('.title-box h2').eq(1).removeClass('ani-fadeIn');
+                        $('.title-box h2').eq(0).removeClass('ani-fadeIn');
+                        $('.title-box h2').eq(1).removeClass('ani-fadeIn');
                         $('.text-box').removeClass('ani-up2');
                         isAnimated=false;
                     }
