@@ -2,188 +2,181 @@
     class about {
         init(){
             // this.scrollEvent();
-            // console.log('about start');
+            this.scroll();
         }
-        scrollEvent(e){
-            let pageLocation = String(document.location).split('/');
-            let selectedPage = pageLocation[4];
-            if(selectedPage == 'service.html#' || selectedPage == 'service.html') return
-            console.log(selectedPage);
-
-            const win = $(window);
-            // const page1Top = $('.page1').offset().top;
-            // const page2Top = $('.page2').offset().top;
-            // const page3Top = $('.page3').offset().top;
-            const page4Top = $('.page4').offset().top;
+        scroll(){
             const sec2Top = $('#sec2').offset().top;
-            const allSection = $('#sec2,#sec3,#sec4,#sec5,#sec6,#sec7,#sec8');
+            const view = $('#viewer');
+            let vh = 0; //viewport height
 
-            let viewHeight = win.height();
-            let viewWidth = win.width();
-            let nowPage = 1;
-            let isWheelLock = true;
-            let isAnimated = false;
-
-
-            $('html').animate({scrollTop:0},1200,'swing');
-
-            /* 개발용 함수 */
-            $('.home-btn').on('click',function(e){
-                e.preventDefault();
-                $(window).scrollTop(sec2Top);
-                nowPage = 8;
-                pageCheck();
-            });
-            win.on('wheel scroll touchmove',function(e){
-                if(isAnimated==true?? $(html).is(":animated")) {scrollStop(); return;}
-                if (win.scrollTop()>sec2Top - viewHeight) return;
-                //애니메이션이 진행중이면 리턴
-                if($('html').is(":animated")) return;
+            const fullPage = $('[fullPage]');
+            let fullPageArr = []; //전체 fulllPage Top값 배열
+            let sloganArr  = [
+                '맞춤영양제',
+                '건강습관',
+                '헬시플레저',
+                '건강메이트'
+            ]
+        
+            let nowPage = 0; //현제 fullPage 페이지 인덱스
+            let isFull = true;
+            //모바일기기를 위한 이벤트
+            let touchStart = null;
+            let touchEnd = null;
             
-                //스크롤 업 시            
-                if (e.originalEvent.deltaY>0){
-                    if(nowPage == 8) return;
-                    nowPage ++;
-                    pageCheck('up');
-                    console.log('up');
-                }//스크롤 다운 시
-                else if(e.originalEvent.deltaY<0){
-                    if(nowPage==1)return;
-                    nowPage--;
-                    pageCheck('down');
-                    console.log('down');
-                }
-            });
-
-            function scrollStop(){
-                $(window).focus(function(){
-                    $(window).on('wheel mousewheel touchmove scroll',function(e){
-                        e.preventDefault();
-                        e.stopPropagation();
-                    });
+            $(document).ready(function(){
+                //화면 높이 설정
+                vh = document.body.clientHeight;
+                fullPage.each(function(){ //배열에 offset Top 넣기
+                    fullPageArr.push($(this).offset().top);
                 });
-                isWheelLock = true;
-            };
-            function scrollOk(){    
-                if (!isWheelLock) return;
-                $(window).focus(function(){
-                    $(window).unbind();
-                });
+                let lastPageTop = fullPageArr[fullPage.length - 2];
                 
-                isWheelLock = false;
-            };
-            function keywordsAni(keywordsText){
-                setTimeout(()=>{
-                    $('.keywords').animate({marginBottom:(-20),opacity:0},800,function(){
-                        $('.keywords').text(keywordsText);
-                        $('.keywords').animate({marginBottom:(0),opacity:1})
-                    }
-                    );
-                },400);
-            };
+                $('#viewer').on('scroll mousewheel',function(e){
+                    //길이를 체크해서 bind/unbind
+                    // if(!isFull){view.focus(function(){view.unbind();});}
+                    // else{e.preventDefault(); e.stopPropagation();}
 
-            function pageCheck(now){
-                scrollStop();
-                console.log(nowPage)
-                switch (nowPage) {
-                    case 1:
-                        keywordsAni('맞춤영양제');
-                        break;
-                    case 2:
-                        keywordsAni('건강습관');
-                        break;
-                    case 3:
-                        keywordsAni('헬시플레져');
-                        break;
-                    case 4:
-                        scrollStop();
-                        if(now=='up'){
-                            keywordsAni('건강메이트');    
+                    if (view.is(':animated') || $('[item]').is(':animated')) return //애니메이션 중복 방지
+                    let direction = e.originalEvent.wheelDelta; //스크롤 방향 감지
+                    // console.log(direction);  
+
+                    //마지막 페이지 인식
+                    console.log(view.scrollTop());
+                    // console.log(nowPage);
+                    // console.log(isFull);
+
+                    if(view.scrollTop() > lastPageTop){isFull = false;} 
+                    if(view.scrollTop() < lastPageTop + 20 ){isFull = true;}
+
+                    if(direction<=0 && isFull){ //풀페이지에서 내려갈 때
+                        if(nowPage>fullPage.length - 1){
+                            view.addClass('on'); isFull = false; return; 
                         }
-                        $('.slogan-tit').animate({opacity:0,top:0},400,function(){
-                            setTimeout(()=>{
-                                $('.title-box').animate({bottom:24},300)
-                                $('.slogan-tit').css({opacity:0});
-                            },400)
-                        });
-                        $('.opacity-layer').css({'opacity':'0'});
-                        break;
-                    case 5:          
-                        scrollStop();              
-                        // if(now=='up'){$('.title-box').show(300);}
-                        $('.opacity-layer').css({'opacity':'.35'});
-                        $('.text-box strong').animate({marginTop:50,opacity:0},800,function(){
-                            scrollStop();
-                            $('.title-box').animate({bottom:(viewHeight/2-36)},500,function(){
-                                $('.title-box').animate({opacity:0},600,function(){
-                                    $('.title-box').addClass('on');
-                                    $('.title-box').animate({opacity:1});
-                                    $('.slogan-tit').css({'display':'block'});
-                                    setTimeout(()=>{
-                                        $('.slogan-tit').animate({opacity:1,top:-58.4},800);
-                                    },500);
+                        // console.log('내림');
+                        nowPage++;
+                        switch (nowPage){
+                            case 0: case 1: case 2:
+                                    $('#sec1 .slogan').animate({opacity:0},function(){
+                                        $('#sec1 .slogan').text(sloganArr[nowPage]);
+                                        $(this).animate({opacity:1});
+                                    });
+                                break;
+                            case 3 : 
+                                $('#sec1 .slogan').animate({opacity:0},function(){
+                                    $('#sec1 .slogan').text(sloganArr[nowPage]);
+                                    $(this).animate({opacity:1});
                                 });
-                            });
-                            $('#sec1 .text-box').animate({top:100+'%',opacity:0},800,function(){
-                                $('#sec1 .text-box').css({'display':'none'});
-                            });
-                        });
-                        break;
-                    case 6:
-                        $('.opacity-layer').css({'opacity':'.70'});
-                        $('.text-box').css({'display':'block'});
-                        $('.title-box').animate({bottom:24,opacity:0},800,function(){
-                            $('.title-box').removeClass('on');
-                            $('.title-box').hide();
-                            $('.text-box').animate({top:50+'%',opacity:1},800,function(){
-                                setTimeout(()=>{
-                                    $('.text-box strong').animate({marginTop:0,opacity:1},800);
-                                },500)
-                            });
-                        });
-                        $('.copy-box').animate({top:100+'%',opacity:0});
-                        $('.copy-box').css({'display':'none'});
-                        break;
-                    case 7:
-                        if(now=='down') return
-                        $('#sec1 .text-box strong').animate({marginTop:50, opacity:0},500,function(){
-                            setTimeout(()=>{
-                                $('#sec1 .text-box').animate({top:100+'%', opacity:0},800,function(){
-                                    $('#sec1 .text-box').css({'display':'none'});
-                                    $('#sec1 .copy-box').animate({top:50+'%', opacity:1});
-                                    $('#sec1 .copy-box').css({'display':'block'});
+                                break;
+                            case 4 :
+                                $('.sub5').animate({opacity:1},500);
+                                $('#sec1 h3').animate({opacity:1},function(){
+                                    $('#sec1 .title').animate({bottom: 40+'%'},400,function(){
+                                        $('#sec1 .slogan').animate({width: 330, paddingLeft:2},300);
+                                        $('#sec1 .plus').show(300);
+                                    });
                                 });
-                            },500);
-                        })
-                        $('.opacity-layer').css({'opacity':'1'});
-                        break;
-                
+                                break;
+                            case 5 :
+                                $('#sec1 .title').animate({opacity:0});
+                                $('.sub5').animate({opacity:0});
+                                sub6on();
+                                break;
+                            case 6 :
+                                sub7on();
+                                break;
+                        }
+                        view.animate({scrollTop:fullPageArr[nowPage]},600);
                     }
-                if(nowPage>7){ //page가 7이상이면
-                    $('.title-box').hide();
-                    allSection.show();
-                    scrollOk();
-                    $('html').css({'overflow':'scroll'});
-                    isAnimated = false;
-                    return;
+
+                    if(direction>0 && isFull){ //풀페이지에서 올라갈 때
+                        if(nowPage<=0) return;
+                        if(nowPage<fullPage.length){view.removeClass('on');}
+                        // console.log('올림');
+                        nowPage--;
+                        switch (nowPage){
+                            case 0: case 1:
+                                $('#sec1 .slogan').animate({opacity:0},function(){
+                                    $('#sec1 .slogan').text(sloganArr[nowPage]);
+                                    $(this).animate({opacity:1});
+                                });;
+                                break;
+                            case 2:
+                                $('#sec1 .slogan').text(sloganArr[nowPage]);
+                                break;
+                            case 3 :
+                                $('.sub5').animate({opacity:0},500);
+                                $('#sec1 .plus').hide(300);
+                                $('#sec1 .slogan').animate({width:370, paddingLeft:10},300,function(){
+                                    $('#sec1 h3').animate({opacity:0})
+                                    $('#sec1 .title').animate({bottom:24},400);
+                                });
+                                $('#sec1 .slogan').animate({opacity:0},function(){
+                                    $('#sec1 .slogan').text(sloganArr[nowPage]);
+                                    $(this).animate({opacity:1});
+                                });
+                                break;
+                            case 4 :
+                                sub6off();
+                                $('.sub5').animate({opacity:1},500);
+                                $('#sec1 .title').animate({opacity:1});
+                                
+                                break;
+                            case 5 :
+                                sub7off();
+                                sub6on();
+                                break;
+                            case 6 :
+                                break;
+                        }
+                        view.animate({scrollTop:fullPageArr[nowPage]},600);
+                    }
+                    // console.log(nowPage);
+                });
+                function sub5on(){
+                    $('.sub5').animate({opacity:1},500);
                 }
-                if(nowPage==7){
-                    allSection.hide();
+                function sub6on(){
+                    $('.sub6').animate({opacity:1},500);
+                    $('.sub6 .text-box').addClass('ani-up');
+                    $('.sub6 .text-box strong').addClass('ani-up');
                 }
-                if(nowPage>4){
-                    allSection.hide();
+                function sub6off(){
+                    $('.sub6 .text-box strong').removeClass('ani-up');
+                    $('.sub6 .text-box').removeClass('ani-up');
+                    $('.sub6').animate({opacity:0});
                 }
-                if(0<nowPage<4){//page가 4보다 작으면
-                    scrollStop();
-                    $('html').css({'overflow':'hidden'});
-                    let posTop = (nowPage-1)*win.height();
-                    $('html').animate({scrollTop:posTop},1200,'swing');
-                    isAnimated = false;
-                    return;
-                };
-                
-            }
-            
+                function sub7on(){
+                    $('.sub7').animate({opacity:1}, 500,function(){
+                        $('.sub7 img').animate({opacity:1})
+                        $('.sub7 img').addClass('ani-up');
+                        sub6off();
+                    });
+                }
+                function sub7off(){
+                    $('.sub7').animate({opacity:0},0);
+                    $('.sub7 img').animate({opacity:0},0);
+                    $('.sub7 img').removeClass('ani-up');
+                }
+                        
+                // view.on({
+                //     touchstart:function(e){
+                //         touchStart = e.originalEvent.changedTouches[0].screenX;
+                //     },
+                //     touchend:function(e){                         
+                //         touchEnd = e.originalEvent.changedTouches[0].screenX;
+                //         //풀페이지에서 내린다면
+                //         if(touchStart-touchEnd > 0  && isFull){
+                //             console.log('scroll Down');
+                //         }
+                //         if(touchEnd-touchStart>0 && isFull){ //풀페이지에서 올린다면
+                //             console.log('up');
+                //         }
+
+                //         console.log(nowPage);
+                //     },
+                // });
+            });
         }
         slider(){
             $(document).ready(function(){

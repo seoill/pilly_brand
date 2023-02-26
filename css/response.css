@@ -1,0 +1,306 @@
+@media all and (max-width: 740px) {
+  header .container {
+    padding: 24px 16px 26px 16px;
+  }
+  header .container .wrap nav h1.left-box a {
+    width: 20px;
+    left: 10px;
+  }
+  main#aboutMain {
+    width: 100%;
+  }
+  main#aboutMain #sec1 {
+    display: none;
+  }
+  main#aboutMain #sec1 .title {
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  main#aboutMain #sec1 .title .container {
+    width: 100%;
+    position: relative;
+  }
+  main#aboutMain #sec1 .title .container .left-box {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 104px;
+    text-align: center;
+  }
+  main#aboutMain #sec1 .title .container .right-box {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+  }
+  main#aboutMain #sec1 .title .container h2 {
+    font-size: 12vw;
+    line-height: 50px;
+  }
+  main#aboutMain #sec1 .title .container h2 i, main#aboutMain #sec1 .title .container h2 span {
+    padding: none;
+  }
+  main#aboutMain #sec1 .title .container h2 span.slogan {
+    width: 75vw;
+  }
+  main#aboutMain #sec1 .page .sub-page.sub6 .text-box p {
+    font-size: 4.3vw;
+    padding: 0 20px;
+  }
+  main#aboutMain #sec1 .page .sub-page.sub6 .text-box strong {
+    padding-top: 30px;
+  }
+  main#aboutMain #sec1 .page .sub-page.sub7 .container {
+    width: 100%;
+    padding: 20px;
+  }
+  main#aboutMain #sec1 .page .sub-page.sub7 .container img {
+    width: 90%;
+    margin-top: -82px;
+  }
+  main#aboutMain #sec1 .page .sub-page.sub7 .container img:first-child {
+    display: none;
+  }
+  main#aboutMain #sec1 .page .sub-page.sub7 .container img:last-child {
+    display: block;
+  }
+  main#aboutMain #sec2 {
+    padding: 150px 0;
+  }
+  main#aboutMain #sec2 .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+  main#aboutMain #sec2 .container .wrap {
+    flex-flow: column;
+  }
+  main#aboutMain #sec2 .container .wrap .left-area {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+  }
+  main#aboutMain #sec2 .container .wrap .left-area img {
+    width: 80vw;
+  }
+  main#aboutMain #sec2 .container .wrap .center-area {
+    display: none;
+  }
+  main#aboutMain #sec2 .container .wrap .right-area {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+  }
+  main#aboutMain #sec2 .container .wrap .right-area .text-box {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+  main#aboutMain #sec2 .container .wrap .right-area .text-box p {
+    font-size: 3.8vw;
+  }
+  main#aboutMain #sec3 .container {
+    padding: 90px 0;
+  }
+  main#aboutMain #sec3 .container .wrap .slide-area {
+    padding: 80px 0;
+  }
+  main#aboutMain #sec3 .container .wrap .slide-area .slide-view {
+    height: 210px;
+  }
+  main#aboutMain #sec3 .container .wrap .slide-area .slide-view .slide-wrap {
+    width: 3200px;
+    height: 210px;
+  }
+  main#aboutMain #sec3 .container .wrap .slide-area .slide-view .slide-wrap .slide {
+    width: 329px;
+    height: 210px;
+    margin-left: 20px;
+  }
+  main#aboutMain #sec3 .container .wrap .btn-area a {
+    width: 80vw;
+  }
+  main#aboutMain #sec4 .container {
+    width: 100%;
+    padding: 160px 20px;
+  }
+  main#aboutMain #sec4 .container .wrap {
+    margin-bottom: 0;
+  }
+  main#aboutMain #sec4 .container .wrap h2 img {
+    width: 90vw;
+  }
+  main#aboutMain #sec4 .container .wrap .bot-area {
+    position: relative;
+    width: 100%;
+    padding-left: 0;
+    border: none;
+  }
+  main#aboutMain #sec4 .container .wrap .bot-area p {
+    width: 100%;
+    font-size: 4.4vw;
+    padding: 5px 0;
+  }
+  main#aboutMain #sec5 .container {
+    width: 100%;
+    padding: 80px 20px;
+  }
+  main#aboutMain #sec5 .container .wrap h4 br {
+    display: block;
+  }
+  main#aboutMain #sec5 .container .wrap .circle-area {
+    height: 650px;
+    width: 250px;
+    position: relative;
+    margin: 0 auto;
+  }
+  main#aboutMain #sec5 .container .wrap .circle-area .circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    margin: 0 auto;
+  }
+  main#aboutMain #sec5 .container .wrap .circle-area .circle h3 {
+    padding: 100px 0 10px 0;
+  }
+  main#aboutMain #sec5 .container .wrap .circle-area .circle.circle1 {
+    right: 0;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+  }
+  main#aboutMain #sec5 .container .wrap .circle-area .circle.circle2 {
+    left: auto;
+    top: 200px;
+    margin: 0 auto;
+  }
+  main#aboutMain #sec5 .container .wrap .circle-area .circle.circle3 {
+    top: 400px;
+    left: 0;
+    margin: 0 auto;
+  }
+  main#aboutMain #sec6 .container {
+    width: 100%;
+    padding: 80px 20px 200px 20px;
+  }
+  main#aboutMain #sec6 .container .wrap {
+    display: block;
+  }
+  main#aboutMain #sec6 .container .wrap .left-area h2 {
+    font-size: 34px;
+    line-height: 38px;
+  }
+  main#aboutMain #sec6 .container .wrap .left-area .text-box p {
+    font-size: 4vw;
+    width: 100%;
+  }
+  main#aboutMain #sec6 .container .wrap .left-area a {
+    position: absolute;
+    bottom: -120px;
+    width: 100%;
+    line-height: 60px;
+    height: 60px;
+    font-size: 4.4vw;
+  }
+  main#aboutMain #sec6 .container .wrap .right-area {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: auto;
+  }
+  main#aboutMain #sec6 .container .wrap .right-area img {
+    width: 100%;
+    height: 60vw;
+    border-radius: 16px;
+  }
+  main#aboutMain #sec7 .container {
+    width: 100%;
+    padding: 80px 20px;
+  }
+  main#aboutMain #sec7 .container .wrap {
+    position: relative;
+  }
+  main#aboutMain #sec7 .container .wrap .area {
+    display: block;
+  }
+  main#aboutMain #sec7 .container .wrap .area img {
+    width: 100%;
+  }
+  main#aboutMain #sec7 .container .wrap .area p {
+    width: 100%;
+  }
+  main#aboutMain #sec7 .container .wrap .area .top-box, main#aboutMain #sec7 .container .wrap .area .bot-box {
+    position: relative;
+  }
+  main#aboutMain #sec7 .container .wrap .area.area1 {
+    position: relative;
+    margin-bottom: 160px;
+  }
+  main#aboutMain #sec7 .container .wrap .area.area1 .left-box .bot-box {
+    margin-top: 420px;
+  }
+  main#aboutMain #sec7 .container .wrap .area.area1 .right-box {
+    position: absolute;
+    top: 200px;
+  }
+  main#aboutMain #sec7 .container .wrap .area.area1 .right-box img {
+    position: absolute;
+    width: 80vw;
+    left: 50%;
+  }
+  main#aboutMain #sec7 .container .wrap .area.area2 .left-box {
+    min-width: 100%;
+    width: 100%;
+  }
+  main#aboutMain #sec7 .container .wrap .area.area2 .left-box h2 {
+    padding-bottom: 20px;
+  }
+  main#aboutMain #sec7 .container .wrap .area.area2 .left-box .bot-box {
+    padding-bottom: 20px;
+  }
+  main#aboutMain #sec7 .container .wrap .area.area2 .right-box {
+    min-width: 100%;
+    position: relative;
+    margin-bottom: 80px;
+  }
+  main#aboutMain #sec7 .container .wrap .area.area3 {
+    padding-top: 80px;
+    padding-bottom: 670px;
+  }
+  main#aboutMain #sec7 .container .wrap .area.area3 .left-box {
+    min-width: 100%;
+    bottom: -300px;
+  }
+  main#aboutMain #sec7 .container .wrap .area.area3 .left-box img {
+    position: absolute;
+    top: 479px;
+  }
+  main#aboutMain #sec7 .container .wrap .area.area3 .right-box {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+  }
+  main#aboutMain #sec7 .container .wrap .area.area3 .right-box .bot-box {
+    bottom: 0;
+    margin-top: 20px;
+  }
+  main#aboutMain #sec8 .container {
+    width: 100%;
+    padding: 80px 20px;
+  }
+  main#aboutMain #sec8 .container .wrap ul.record-box {
+    width: 100%;
+    padding: 20px;
+  }
+  main#aboutMain #sec8 .container .wrap ul.record-box li {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 15px;
+  }
+  main#aboutMain #sec8 .container .wrap ul.record-box li div.record {
+    width: 280px;
+    height: 280px;
+    padding-bottom: 0;
+  }
+}/*# sourceMappingURL=response.css.map */

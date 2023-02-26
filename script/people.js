@@ -6,29 +6,35 @@
             this.randomArray();
         }
         scroll(){
-            const win = $(window);
-            let isAnimated = false;
-            win.on('wheel scroll touchmove',function(e){
-                if(!isAnimated){
-                    if(e.originalEvent.deltaY<0) return;
-                    $('#sec1').addClass('on');
-                    $('.title-box').eq(0).addClass('ani-fadeIn');
-                    $('.text-box').addClass('ani-fadeIn');
-                    isAnimated = true;
-                    setTimeout(function(){
-                        $('html').css({'overflow':'scroll'});
-                    });
-                }
-                if(e.originalEvent.deltaY<0 && win.scrollTop() < 10){
-                    if(isAnimated == true){
-                        $('html').css({'overflow':'hidden'});
-                        $('#sec1').removeClass('on');
-                        $('.title-box').removeClass('ani-fadeIn');
-                        $('.text-box').removeClass('ani-fadeIn');
-                        isAnimated=false;
+            const view = $('#viewer');
+            let nowPage = 0;
+            $(document).ready(function(){
+                $('#viewer').on('scroll mousewheel',function(e){                    
+                    e.preventDefault(); e.stopPropagation();
+                    if(nowPage>=3){view.unbind();}
+
+                    //애니메이션 중복 방지
+                    if (view.is(':animated') || $('[item]').is(':animated')) return
+                    let direction = e.originalEvent.wheelDelta; //스크롤 방향 감지
+
+                    if(direction<=0){
+                        nowPage++;
+                        switch (nowPage){
+                            case 1 :
+                                $('#sec1').addClass('on');
+                                view.animate({scrollTop:0},1000);
+                                break;
+                            case 2 :
+                                view.animate({scrollTop:0},1000);
+                                $('.title-box').addClass('ani-fadeIn');
+                                $('.text-box').addClass('ani-up2');
+                                break;
+                            case 3:
+                                view.addClass('on');
+                                break;
+                        }
                     }
-                    
-                }
+                });
             });
         }
         randomArray(){
@@ -65,7 +71,7 @@
             for(let i = 0; i <= peopleSort.length-1 ; i++){
                 peopleLength[i] = i;
             }
-            console.log(peopleLength);
+            // console.log(peopleLength);
 
             const shuffle = () => (Math.random() - 0.5);
             let shuffled = [...peopleLength].sort(shuffle);
