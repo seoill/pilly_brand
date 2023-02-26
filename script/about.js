@@ -198,6 +198,7 @@
         }
     }
     const newAbout = new about();
+    if(document.body.clientWidth<750) return;
     newAbout.init();
 
 })(jQuery);
