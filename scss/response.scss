@@ -10,14 +10,15 @@
         }
     }
     main#aboutMain{
-        width: 100%;
+        width: 100%; height: 100%;
         #sec1{
-            display: none;
+            width: 100%; height: 100%; position: relative;
             .title{
-                width: 100%;
+                width: 100%; height: 100%;
                 top: 0; left: 0;
                 .container{
-                    width: 100%; position: relative;
+                    width: 100%; height:100%; 
+                    position: relative;
                     .left-box{
                         width: 100%; text-align: center; 
                         position: absolute; top: 104px;
@@ -35,7 +36,9 @@
                 }
             }
             .page{
+                width: 100%; height: 100%;
                 .sub-page{
+                    width: 100%; height: 100%;
                     &.sub6{
                         .text-box{
                             p{ font-size: 4.3vw; padding: 0 20px;}
@@ -44,7 +47,8 @@
                     }
                     &.sub7{
                         .container{
-                            width: 100%; padding: 20px;
+                            width: 100%; height: 100%;
+                            padding: 20px;
                             img{
                                 width: 90%; margin-top:calc(-164px / 2);
                                 &:first-child{ display: none;}
@@ -55,7 +59,19 @@
                 }
             }
         }
+        #sub7B{
+            .container{
+                width: 100%; height: 100%;
+                padding: 20px;
+                img{
+                    width: 90%; margin-top:calc(-164px / 2);
+                    &:first-child{ display: none;}
+                    &:last-child{display: block;}
+                }
+            }
+        }
         #sec2{
+            width: 100%; height: 100%;
             padding: 150px 0;
             .container{
                 width: 100%; padding: 0 20px;
@@ -67,7 +83,6 @@
                         width:100%; height:auto; margin-top: 30px;
                         .text-box{
                             margin:0; width:100%; text-align: center;
-                            p{font-size: 3.8vw;}
                         }
                     }
                 }
@@ -88,7 +103,7 @@
                         }
                     }
                     .btn-area{
-                        a{width: 80vw}
+                        a{width: 80%;}
                     }
                 }
             }
@@ -98,11 +113,11 @@
                 width: 100%; padding: 160px 20px;
                 .wrap{
                     margin-bottom: 0;
-                    h2 img{width: 90vw;}
+                    h2 img{width: 90%;}
                     .bot-area{
                         position: relative; width: 100%;
                         padding-left:0; border: none;
-                        p{width: 100%; font-size: 4.4vw; padding:5px 0;}
+                        p{width: 100%; padding:5px 0;}
                     }
                 }
             }
@@ -139,22 +154,25 @@
                         .text-box{
                             p{font-size: 4vw; width: 100%;}
                         }
-                        a{position: absolute; bottom: -120px; width:100%; line-height:60px; height: 60px; font-size: 4.4vw;}
+                        a{position: absolute; bottom: -120px; width:100%; line-height:60px; height: 60px;}
                     }
                     .right-area{
                         position: relative; top:0px;
                         width: 100%; height: auto;
-                        img{width: 100%; height: 60vw; border-radius: 16px;}
+                        img{width: 100%; height: 60%; border-radius: 16px;}
                     }
                 }
             }
         }
         #sec7{
+            width: 100%;
             .container{
                 width:100%; padding: 80px 20px;
                 .wrap{
+                    width: 100%;
                     position: relative;
                     .area{
+                        width: 100%;
                         display: block;
                         img{width: 100%;}
                         p{width: 100%;}
@@ -162,23 +180,26 @@
                         &.area1{ 
                             position: relative; margin-bottom: 160px;
                             .left-box{
+                                width: 100%;
                                 .bot-box{margin-top: 420px;}
                             }
                             .right-box{
-                                position: absolute; top: 200px;
-                                img{position: absolute; width: 80vw; left:50%; }
+                                position: absolute; min-width:100%; width: 100%;  height: 100px;
+                                top: 180px; left: 0;
+                                text-align: center;
+                                img{position: relative; width: 90%; max-width: 370px;}
                             }
                         }
                         &.area2{
                             .left-box{
                                 min-width:100%; width: 100%;
                                 h2{padding-bottom: 20px;}
-                                .bot-box{padding-bottom: 20px;}
+                                .bot-box{padding-bottom: 40px;}
                             }
-                            .right-box{min-width: 100%; position: relative; margin-bottom: 80px;}
+                            .right-box{min-width: 100%; position: relative; margin-bottom: 100px;}
                         }
                         &.area3{
-                            padding-top: 80px; padding-bottom: 670px;
+                            padding-top: 80px; padding-bottom: 690px;
                             .left-box{
                                 min-width: 100%; bottom: -300px;
                                 img{position: absolute; top: 479px;}
@@ -196,13 +217,33 @@
             .container{
                 width: 100%; padding: 80px 20px;
                 .wrap{
+                    .bx-wrapper{background:none; border: none;box-shadow: none; margin-top: -60px;}
+                    .bx-viewport{
+                        overflow:visible !important; 
+                    }
                     ul.record-box{
-                        width: 100%;
+                        width: 100%; height: 370px;
                         padding: 20px;
                         li{
                             width: 100%; padding:0; padding-bottom: 15px;
                             div.record{
                                 width: 280px; height: 280px; padding-bottom: 0;
+                            }
+                        }
+                    }
+                    .bot-area{
+                        width: 100%; flex-flow: column wrap; padding: 200px 0 80px 0;
+                        .left-box{position: relative;}
+                        .right-box{
+                            margin-top: 50px;
+                            li{
+                                a{
+                                    width: 100%; font-size: 20px; padding: 0 20px;
+                                    &.link1{height: 56px; line-height: 56px;}
+                                    &.link2{height: 84px; line-height: 24px; padding: 16px 70px 16px 20px;} 
+                                    &.link3{height: 56px; line-height: 56px;}
+                                    &.link4{height: 84px; line-height: 24px;  padding: 16px 70px 16px 20px;}
+                                }
                             }
                         }
                     }

@@ -156,8 +156,8 @@ header .container .wrap nav ul.right-box li a:hover {
 }
 
 #viewer {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow-y: scroll;
   top: 0;
   left: 0;
@@ -170,22 +170,16 @@ header .container .wrap nav ul.right-box li a:hover {
 #viewer.on {
   overflow-x: hidden;
 }
-#viewer.on::-webkit-scrollbar {
-  display: block;
-}
-#viewer.on::-webkit-scrollbar-thumb {
-  background: #8e8e8e;
-  width: 2px;
-  border-radius: 10px;
-}
-#viewer.on::-webkit-scrollbar-track {
-  opacity: 0;
-}
 
 main#aboutMain {
   width: 100%;
+  height: 100%;
   position: relative;
   z-index: 2;
+}
+main#aboutMain #sec1 {
+  width: 100%;
+  height: 100%;
 }
 main#aboutMain #sec1 .title {
   position: fixed;
@@ -236,8 +230,8 @@ main#aboutMain #sec1 .title .container h2 span.plus {
   display: none;
 }
 main#aboutMain #sec1 .page {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: inline-block;
   position: relative;
   transition: all 1.2s;
@@ -257,8 +251,8 @@ main#aboutMain #sec1 .page.page4 {
   background-image: url(../img/about/about_main_4.jpg);
 }
 main#aboutMain #sec1 .page .sub-page {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -314,7 +308,6 @@ main#aboutMain #sec1 .page .sub-page.sub7 .container {
   width: 1200px;
   padding: 0 55px;
   margin: 0 auto;
-  height: 100vh;
 }
 main#aboutMain #sec1 .page .sub-page.sub7 .container img {
   z-index: 20;
@@ -324,6 +317,26 @@ main#aboutMain #sec1 .page .sub-page.sub7 .container img {
   margin-top: -178px;
 }
 main#aboutMain #sec1 .page .sub-page.sub7 .container img:last-child {
+  display: none;
+}
+main#aboutMain #sub7B {
+  width: 100%;
+  height: 100%;
+  background: #FF5C35;
+}
+main#aboutMain #sub7B .container {
+  width: 1200px;
+  padding: 0 55px;
+  margin: 0 auto;
+}
+main#aboutMain #sub7B .container img {
+  z-index: 20;
+  position: absolute;
+  top: 50%;
+  opacity: 1;
+  margin-top: -178px;
+}
+main#aboutMain #sub7B .container img:nth-child(2) {
   display: none;
 }
 main#aboutMain #sec2 {
@@ -863,10 +876,11 @@ main#aboutMain #sec8 .container .wrap .bot-area .right-box li a:hover {
 
 main#serviceMain {
   width: 100%;
+  height: 100%;
   position: relative;
 }
 main#serviceMain #sec1 {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: relative;
   transition: all 0.3s;
@@ -880,7 +894,7 @@ main#serviceMain #sec1::before {
   left: 0;
   transition: all 3s;
   z-index: 2;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   opacity: 0;
   background: url(../img/service/service_main_2.jpg) 50% 100% no-repeat;
@@ -1170,11 +1184,12 @@ main#serviceMain #modal .container .wrap .right-box p {
 
 main#productMain {
   width: 100%;
+  height: 100%;
   position: relative;
   background-color: #00A7E1;
 }
 main#productMain #sec1 {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   transition: all 3s;
   background: url(../img/story/story_main_1.png) 50% 45% no-repeat;
@@ -1186,12 +1201,13 @@ main#productMain #sec1::before {
   position: absolute;
   top: 0;
   left: 0;
-  transition: all 0.3s;
-  height: 100vh;
+  transition: all 1s;
+  height: 100%;
   width: 100%;
   background: url(../img/story/story_main_2.png) 50% 45% no-repeat;
   background-size: 314px;
   backdrop-filter: brightness(0.7) saturate(150%);
+  -webkit-backdrop-filter: brightness(0.7) saturate(150%);
   opacity: 0;
 }
 main#productMain #sec1.on::before {
@@ -1425,10 +1441,11 @@ main#productMain #sec3 .container .wrap .bot-area .right-box .text-box a {
 
 main#peopleMain {
   width: 100%;
+  height: 100%;
   position: relative;
 }
 main#peopleMain #sec1 {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: relative;
   transition: all 0.3s;
@@ -1440,12 +1457,13 @@ main#peopleMain #sec1::before {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0;
-  height: 100vh;
+  z-index: 2;
+  height: 100%;
   width: 100%;
-  backdrop-filter: brightness(70%);
   opacity: 0;
   transition: all 1s;
+  backdrop-filter: brightness(70%);
+  -webkit-backdrop-filter: brightness(70%);
 }
 main#peopleMain #sec1.on::before {
   opacity: 1;

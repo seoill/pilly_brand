@@ -8,17 +8,22 @@
   }
   main#aboutMain {
     width: 100%;
+    height: 100%;
   }
   main#aboutMain #sec1 {
-    display: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
   }
   main#aboutMain #sec1 .title {
     width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
   }
   main#aboutMain #sec1 .title .container {
     width: 100%;
+    height: 100%;
     position: relative;
   }
   main#aboutMain #sec1 .title .container .left-box {
@@ -44,6 +49,14 @@
   main#aboutMain #sec1 .title .container h2 span.slogan {
     width: 75vw;
   }
+  main#aboutMain #sec1 .page {
+    width: 100%;
+    height: 100%;
+  }
+  main#aboutMain #sec1 .page .sub-page {
+    width: 100%;
+    height: 100%;
+  }
   main#aboutMain #sec1 .page .sub-page.sub6 .text-box p {
     font-size: 4.3vw;
     padding: 0 20px;
@@ -53,6 +66,7 @@
   }
   main#aboutMain #sec1 .page .sub-page.sub7 .container {
     width: 100%;
+    height: 100%;
     padding: 20px;
   }
   main#aboutMain #sec1 .page .sub-page.sub7 .container img {
@@ -65,7 +79,24 @@
   main#aboutMain #sec1 .page .sub-page.sub7 .container img:last-child {
     display: block;
   }
+  main#aboutMain #sub7B .container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+  }
+  main#aboutMain #sub7B .container img {
+    width: 90%;
+    margin-top: -82px;
+  }
+  main#aboutMain #sub7B .container img:first-child {
+    display: none;
+  }
+  main#aboutMain #sub7B .container img:last-child {
+    display: block;
+  }
   main#aboutMain #sec2 {
+    width: 100%;
+    height: 100%;
     padding: 150px 0;
   }
   main#aboutMain #sec2 .container {
@@ -97,9 +128,6 @@
     width: 100%;
     text-align: center;
   }
-  main#aboutMain #sec2 .container .wrap .right-area .text-box p {
-    font-size: 3.8vw;
-  }
   main#aboutMain #sec3 .container {
     padding: 90px 0;
   }
@@ -119,7 +147,7 @@
     margin-left: 20px;
   }
   main#aboutMain #sec3 .container .wrap .btn-area a {
-    width: 80vw;
+    width: 80%;
   }
   main#aboutMain #sec4 .container {
     width: 100%;
@@ -129,7 +157,7 @@
     margin-bottom: 0;
   }
   main#aboutMain #sec4 .container .wrap h2 img {
-    width: 90vw;
+    width: 90%;
   }
   main#aboutMain #sec4 .container .wrap .bot-area {
     position: relative;
@@ -139,7 +167,6 @@
   }
   main#aboutMain #sec4 .container .wrap .bot-area p {
     width: 100%;
-    font-size: 4.4vw;
     padding: 5px 0;
   }
   main#aboutMain #sec5 .container {
@@ -201,7 +228,6 @@
     width: 100%;
     line-height: 60px;
     height: 60px;
-    font-size: 4.4vw;
   }
   main#aboutMain #sec6 .container .wrap .right-area {
     position: relative;
@@ -211,17 +237,22 @@
   }
   main#aboutMain #sec6 .container .wrap .right-area img {
     width: 100%;
-    height: 60vw;
+    height: 60%;
     border-radius: 16px;
+  }
+  main#aboutMain #sec7 {
+    width: 100%;
   }
   main#aboutMain #sec7 .container {
     width: 100%;
     padding: 80px 20px;
   }
   main#aboutMain #sec7 .container .wrap {
+    width: 100%;
     position: relative;
   }
   main#aboutMain #sec7 .container .wrap .area {
+    width: 100%;
     display: block;
   }
   main#aboutMain #sec7 .container .wrap .area img {
@@ -237,17 +268,25 @@
     position: relative;
     margin-bottom: 160px;
   }
+  main#aboutMain #sec7 .container .wrap .area.area1 .left-box {
+    width: 100%;
+  }
   main#aboutMain #sec7 .container .wrap .area.area1 .left-box .bot-box {
     margin-top: 420px;
   }
   main#aboutMain #sec7 .container .wrap .area.area1 .right-box {
     position: absolute;
-    top: 200px;
+    min-width: 100%;
+    width: 100%;
+    height: 100px;
+    top: 180px;
+    left: 0;
+    text-align: center;
   }
   main#aboutMain #sec7 .container .wrap .area.area1 .right-box img {
-    position: absolute;
-    width: 80vw;
-    left: 50%;
+    position: relative;
+    width: 90%;
+    max-width: 370px;
   }
   main#aboutMain #sec7 .container .wrap .area.area2 .left-box {
     min-width: 100%;
@@ -257,16 +296,16 @@
     padding-bottom: 20px;
   }
   main#aboutMain #sec7 .container .wrap .area.area2 .left-box .bot-box {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
   }
   main#aboutMain #sec7 .container .wrap .area.area2 .right-box {
     min-width: 100%;
     position: relative;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
   }
   main#aboutMain #sec7 .container .wrap .area.area3 {
     padding-top: 80px;
-    padding-bottom: 670px;
+    padding-bottom: 690px;
   }
   main#aboutMain #sec7 .container .wrap .area.area3 .left-box {
     min-width: 100%;
@@ -289,8 +328,18 @@
     width: 100%;
     padding: 80px 20px;
   }
+  main#aboutMain #sec8 .container .wrap .bx-wrapper {
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin-top: -60px;
+  }
+  main#aboutMain #sec8 .container .wrap .bx-viewport {
+    overflow: visible !important;
+  }
   main#aboutMain #sec8 .container .wrap ul.record-box {
     width: 100%;
+    height: 370px;
     padding: 20px;
   }
   main#aboutMain #sec8 .container .wrap ul.record-box li {
@@ -302,5 +351,39 @@
     width: 280px;
     height: 280px;
     padding-bottom: 0;
+  }
+  main#aboutMain #sec8 .container .wrap .bot-area {
+    width: 100%;
+    flex-flow: column wrap;
+    padding: 200px 0 80px 0;
+  }
+  main#aboutMain #sec8 .container .wrap .bot-area .left-box {
+    position: relative;
+  }
+  main#aboutMain #sec8 .container .wrap .bot-area .right-box {
+    margin-top: 50px;
+  }
+  main#aboutMain #sec8 .container .wrap .bot-area .right-box li a {
+    width: 100%;
+    font-size: 20px;
+    padding: 0 20px;
+  }
+  main#aboutMain #sec8 .container .wrap .bot-area .right-box li a.link1 {
+    height: 56px;
+    line-height: 56px;
+  }
+  main#aboutMain #sec8 .container .wrap .bot-area .right-box li a.link2 {
+    height: 84px;
+    line-height: 24px;
+    padding: 16px 70px 16px 20px;
+  }
+  main#aboutMain #sec8 .container .wrap .bot-area .right-box li a.link3 {
+    height: 56px;
+    line-height: 56px;
+  }
+  main#aboutMain #sec8 .container .wrap .bot-area .right-box li a.link4 {
+    height: 84px;
+    line-height: 24px;
+    padding: 16px 70px 16px 20px;
   }
 }/*# sourceMappingURL=response.css.map */
