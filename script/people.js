@@ -54,12 +54,11 @@
                             case 1 :
                                 $('#sec1').addClass('on');
                                 view.animate({scrollTop:0},1000);
-                                break;
-                            case 2 :
-                                view.animate({scrollTop:0},1000);
                                 $('.title-box').addClass('ani-fadeIn');
                                 $('.text-box').addClass('ani-up2');
                                 view.css({'overflow-y':'scroll'});
+                                break;
+                            case 2 :
                                 break;
                             case 3:
                                 break;
