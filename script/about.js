@@ -92,8 +92,13 @@
                         $('.sub5').animate({opacity:1},500);
                         $('#sec1 h3').animate({opacity:1},function(){
                             $('#sec1 .title').animate({bottom: 40+'%'},400,function(){
-                                $('#sec1 .slogan').animate({width: 330, paddingLeft:2},300);
-                                $('#sec1 .plus').show(300);
+                                $('#sec1 .slogan').animate({width: 328, paddingLeft:2},300);
+                                $('#sec1 h2 i').animate({paddingLeft:2});
+                                $('#sec1 h2 span').animate({paddingLeft:2},function(){
+                                    $('#sec1 .plus').show(300);
+                                    $('#sec1 .container').animate({width:1138},200);
+                                    $('#sec1 h3').animate({width:1138},200);
+                                });
                             });
                         });
                         break;

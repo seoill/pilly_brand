@@ -100,9 +100,6 @@ header{
     &::-webkit-scrollbar{display: none;}
     &.on{
         overflow-x: hidden;
-        // &::-webkit-scrollbar {display: block;}	
-        // &::-webkit-scrollbar-thumb {background: #8e8e8e; width: 2px; border-radius: 10px;}	
-        // &::-webkit-scrollbar-track {opacity: 0;}	
     }
 }
 main#aboutMain{
@@ -125,8 +122,8 @@ main#aboutMain{
                     @include tit_pretendard(800,72px,$white, 86px);
                     i, span {vertical-align: baseline; padding-left: 10px;}
                     i{color: $orange;}
-                    span.slogan{width: 370px; display: inline-block; text-align: center;}
-                    span.plus{display: none;}
+                    span.slogan{width: 370px; display: inline-block; text-align: center; }
+                    span.plus{display: none; vertical-align: baseline;}
                 }
             }
         }
@@ -172,17 +169,6 @@ main#aboutMain{
                         }
                     }
                 }
-            }
-        }
-    }
-    div.oh{height: 200px;}
-    #sub7B{
-        width: 100%; height: 100%; background:$orange;
-        .container{
-            width: 1200px; padding:0 55px; margin: 0 auto;
-            img{
-                z-index: 20; position: absolute; top: 50%; opacity: 1; margin-top:calc(-356px / 2);
-                &:nth-child(2){display: none;}
             }
         }
     }
@@ -394,7 +380,7 @@ main#aboutMain{
                         margin-top: 159px; height: 502.5px;
                         .left-box{min-width: 670px;}
                         .right-box{
-                            min-width: 500px; position: absolute; right:0;
+                            min-width: 500px; position: absolute; right:0; padding-left:110px;
                             .bot-box{bottom: -502.5px;}
                         }
                     }
@@ -445,6 +431,7 @@ main#aboutMain{
                                 width: 670px; height: 80px;
                                 text-align: left; padding: 0 32px;
                                 @include tit_pretendard(700, 26px,$black,80px);
+                                box-shadow: 0 2px 8px rgba(0,0,0,.1);
                                 &::after{
                                     content:'';
                                     position: absolute; color: $orange; display: inline-block;
@@ -468,13 +455,13 @@ main#serviceMain{
         height: 100%; width: 100%; position: relative;
         transition: all .3s;
         background: url(../img/service/service_main_1.jpg) 50% 100% no-repeat;
-        background-size: cover;
+        background-size: 110%;
         &::before{
             content: ''; position: absolute; top: 0; left: 0;
             transition: all 3s; z-index: 2;
             height: 100%; width: 100%; opacity: 0;
             background: url(../img/service/service_main_2.jpg) 50% 100% no-repeat;
-            background-size: cover;
+            background-size: 110%;
         }
         &.on{&::before{opacity: 1;}}
         .title-box{
@@ -490,7 +477,7 @@ main#serviceMain{
         }
         .text-box{
             opacity: 0; padding-top: 35px;
-            p{@include tit_pretendard(400, 26px, $white, 31px);}
+            p{@include tit_pretendard(400, 26px, $white, 36px);}
         }
     }
     #sec2{
@@ -572,7 +559,7 @@ main#serviceMain{
     }
     #modal{
         position: fixed; width: 100vw; height: 100vh; top:0; left:0;
-        background: rgba(0,0,0,.5); z-index: 999;
+        background: rgba(255,92,53,.35); z-index: 999;
         display: none;
         .container{
             position: absolute; top: 50%; left: 50%;
@@ -603,7 +590,7 @@ main#serviceMain{
                             }
                         }
                     }
-                    h4{@include tit_pretendard(700, 16px, $orange, 160%); padding: 30px 0 40px 0;}
+                    h4{@include tit_pretendard(700, 16px, $orange, 160%); padding: 30px 0 30px 0;}
                     p{@include tit_pretendard(400, 16px, $black, 160%);}
                 }
             }
@@ -638,7 +625,7 @@ main#productMain{
             .text-box{
                 position:relative; z-index: 3; padding-top: 60px; opacity: 0;
                p{
-                   @include tit_pretendard(300, 26px, $white, 31px);
+                   @include tit_pretendard(300, 26px, $white, 36px);
                    text-align: center;
                }
            }
@@ -738,7 +725,7 @@ main#peopleMain{
     #sec1{
         height: 100%; width: 100%; position: relative;
         transition: all .3s;
-        background: url(../img/people/people_main.jpg) 50% 100% no-repeat;
+        background: url(../img/people/people_main.jpg) 50% 70% no-repeat;
         background-size: cover;
         &::before{
             content: ''; position: absolute; top: 0; left: 0; z-index: 2;
@@ -761,7 +748,7 @@ main#peopleMain{
                 padding-top: 40px; position: relative; z-index: 2;
                 opacity: 0;
                 p{
-                    @include tit_pretendard(400, 26px, $white, 31px);
+                    @include tit_pretendard(400, 26px, $white, 36px);
                     i{color: $orange; vertical-align: baseline;}
                 }
             }
