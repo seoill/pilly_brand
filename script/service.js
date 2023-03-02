@@ -42,31 +42,31 @@
                 });
 
                 if($(window).width()<750) {view.css({'overflow':'hidden'});}
-                view.on({
-                    touchstart:function(e){
-                        touchStart = e.originalEvent.changedTouches[0].screenX;
-                    },
-                    touchend:function(e){                         
-                        touchEnd = e.originalEvent.changedTouches[0].screenX;
-                        //풀페이지에서 내린다면
-                        if(touchStart-touchEnd < 0 ){
-                            nowPage++;
-                            switch (nowPage){
-                                case 1 :
-                                    $('#sec1').addClass('on');
-                                    view.animate({scrollTop:0},500);
-                                    $('.title-box h2').eq(0).addClass('ani-fadeIn');
-                                    $('.title-box h2').eq(1).addClass('ani-fadeIn');
-                                    $('.text-box').addClass('ani-up2');
-                                    view.css({'overflow-y':'scroll'});
-                                    break;
-                                case 2 :
-                                    break;
-                            }
-                        }
-                        // console.log(nowPage);
-                    },
-                });
+                // view.on({
+                //     touchstart:function(e){
+                //         touchStart = e.originalEvent.changedTouches[0].screenX;
+                //     },
+                //     touchend:function(e){                         
+                //         touchEnd = e.originalEvent.changedTouches[0].screenX;
+                //         //풀페이지에서 내린다면
+                //         if(touchStart-touchEnd < 0 ){
+                //             nowPage++;
+                //             switch (nowPage){
+                //                 case 1 :
+                //                     $('#sec1').addClass('on');
+                //                     view.animate({scrollTop:0},500);
+                //                     $('.title-box h2').eq(0).addClass('ani-fadeIn');
+                //                     $('.title-box h2').eq(1).addClass('ani-fadeIn');
+                //                     $('.text-box').addClass('ani-up2');
+                //                     view.css({'overflow-y':'scroll'});
+                //                     break;
+                //                 case 2 :
+                //                     break;
+                //             }
+                //         }
+                //         // console.log(nowPage);
+                //     },
+                // });
             });
         }
         slider(){
@@ -181,7 +181,18 @@
 })(jQuery);
 
 
+let scr = false;
+const v = document.getElementById('viewer');
 
+function touch(){
+    v.style.overflowY = 'scroll';
+    $('.title-box h2').eq(0).addClass('ani-fadeIn');
+    $('.title-box h2').eq(1).addClass('ani-fadeIn');
+    $('.text-box').addClass('ani-up2');
+    scr = true;
+    console.log(scr)
+}
+if(!scr) {v.addEventListener("touchend", touch, false);}
 
 
 

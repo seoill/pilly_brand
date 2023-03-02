@@ -1,6 +1,1 @@
-@import url("../css/reset.css");
-@import url("./animation.css");
-@import url("./header.css");
-html {
-  overflow: hidden;
-}/*# sourceMappingURL=service.css.map */
+@import"../css/reset.css";@import"./animation.css";@import"./header.css";html{overflow:hidden}
