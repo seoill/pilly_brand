@@ -70,7 +70,7 @@
                     // nowPage++
                     mainMotion(nowPage);
             });
-            $('#viewer').on('click',function(){
+            $('#viewer').on('scroll',function(){
                 if(window.innerWidth <= mobPoint){
                     nowPage++
                     mainMotion(nowPage);
@@ -96,7 +96,7 @@
                     case 4 :
                         $('.sub5').animate({opacity:1},500);
                         
-                        if($(window).width()<mobPoint){
+                        if($(window).width()<mobPoint){ //모바일용
                             //padding 값 줄이기
                             $('#sec1 h2 i').css({paddingLeft:0,marginLeft:-5});
                             $('#sec1 h2 span').css({paddingLeft:0,marginLeft:-5});
@@ -118,7 +118,7 @@
                                 });
                             });
                         }
-                        else{
+                        else{ //PC용
                             $('#sec1 h2 i').animate({paddingLeft:2});
                             $('#sec1 h2 span').animate({paddingLeft:2});
                             $('#sec1 h3').animate({opacity:1},function(){
@@ -127,11 +127,10 @@
                                 $('#sec1 h3').animate({width: 1138},200);
                                 $('#sec1 .container').animate({width:1138},400, function(){
                                     setTimeout(()=>{
-                                        // $('#sec1 .plus').css({display:'inline-block',opacity:'0'});
-                                        // $('#sec1 .plus').animate({opacity:1},600);
-                                        $('#sec1 .plus').fadeIn(800);
-                                        
-                                    },300)
+                                        $('#sec1 .plus').animate({opacity:1},600,'easeInQuart');
+                                        $('#sec1 .plus').fadeIn(600);
+                                        // $('#sec1 .plus').css({display:'inline-block'});
+                                    },200)
                                 });
                             });
                         }

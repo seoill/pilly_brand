@@ -1,3 +1,41 @@
+.ani-fadeIn{animation: fadeInAni .6s both ease-in-out;}
+.ani-up{animation: upAni .4s both ease-in-out;}
+.ani-up2{animation: upAni2 .6s both ease-in;}
+.ani-down{animation: upAni .4s both ease-out reverse;}
+.ani-scale{animation: scaleAni .6s both ease-in-out;}
+.ani-scale-r{animation: scaleAni .6s both ease-in-out reverse;}
+
+@keyframes fadeInAni { //페이드 인 
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes upAni { //마지막쯤 바닥으로 살짝 bouncing하는 모션
+    0% {transform: translateY(140px); opacity: 0;}
+    100% {transform: translateY(0px); opacity: 1;}
+}
+@keyframes upAni2 { //마지막쯤 바닥으로 살짝 bouncing하는 모션
+    0% {transform: translateY(50px); opacity: 0;}
+    100% {transform: translateY(0px); opacity: 1;}
+}
+@keyframes downAni { //위에서 아래로 떨어집니다. 
+    0% {transform: translateY(-100px); opacity: 0;}
+    65% {transform: translateY(0px); opacity: 1;}
+    80% {transform: translateY(-6px); opacity: 1;}
+    100% {transform: translateY(0px); opacity: 1;}
+}
+@keyframes scaleAni { //작은 스케일에서 정 사이즈로
+    0%   {transform: scale(.8); opacity: 0;}
+    100% {transform: scale(1); opacity: 1;}
+}
+
+//그 외 순차적인 애니메이션을 위한 클래스
+.delay-0{animation-delay: 0;}
+.delay-1{animation-delay: .2s;}
+.delay-2{animation-delay: .6s;}
+.delay-3{animation-delay: .9s;}
+.delay-4{animation-delay: 1.2s;}
+.delay-5{animation-delay: 1.5s;}
+
 $white:#FFFFFF;
 $black : #000000;
 $orange:#FF5C35;
@@ -86,17 +124,6 @@ $darkGray:#8E8E93;
                 }
             }
         }
-        #sub7B{
-            .container{
-                width: 100%; height: 100%;
-                padding: 20px;
-                img{
-                    width: 90%; margin-top:calc(-164px / 2);
-                    &:first-child{ display: none;}
-                    &:last-child{display: block;}
-                }
-            }
-        }
         #sec2{
             width: 100%; height: 100%;
             padding: 150px 0;
@@ -119,6 +146,11 @@ $darkGray:#8E8E93;
             .container{
                 padding: 90px 0;
                 .wrap{
+                    .title-area{
+                        h2{font-size: 32px; line-height: 38px;}
+                        img{width: 230px; height: auto;}
+
+                    }
                     .slide-area{
                         padding: 80px 0;
                         .slide-view {
@@ -137,7 +169,7 @@ $darkGray:#8E8E93;
         }
         #sec4{
             .container{
-                width: 100%; padding: 160px 20px;
+                width: 100%; padding: 180px 20px;
                 .wrap{
                     margin-bottom: 0;
                     h2 img{width: 90%;}
@@ -151,21 +183,24 @@ $darkGray:#8E8E93;
         }
         #sec5{
             .container{
-                width: 100%; padding: 80px 20px;
+                width: 100%; padding: 90px 20px;
                 .wrap{
-                    h4 {br{display: block;}}
+                    h4 {br{display: block;} margin-bottom: 50px;}
                     .circle-area{
-                        height:calc(250px*2.6); width: 250px;
+                        height:calc(280px*2.6); width: 280px;
                         position: relative; margin: 0 auto;
                         .circle{
-                            width:250px; height:250px;
+                            width:280px; height:280px;
                             border-radius: 100%; margin: 0 auto;
-                            h3{padding: 100px 0 10px 0;}
-                            &.circle1{right:0; left:0; top: 0; margin: 0 auto;}
+                            h3{padding: 120px 0 10px 0; img{height: 22px;}}
+                            &.circle1{
+                                right:0; left:0; top: 0; margin: 0 auto;
+                                h3{padding-top:110px;}
+                            }
                             &.circle2{
                                 left:auto; top:200px; margin:0 auto;
                             }
-                            &.circle3{top: 400px; left:0; margin: 0 auto;}
+                            &.circle3{top: 400px; left:0; margin: 0 auto; h3{padding-top:125px;}}
                         }
                     }
                 }
@@ -202,13 +237,19 @@ $darkGray:#8E8E93;
                         width: 100%;
                         display: block;
                         img{width: 100%;}
-                        p{width: 100%;}
+                        h2{font-size:32px; line-height: 36px;}
+                        p{width: 100%; font-size: 14px;}
                         .top-box, .bot-box{position: relative;}
                         &.area1{ 
-                            position: relative; margin-bottom: 160px;
+                            position: relative; margin-bottom: 160px; width: 100%;
                             .left-box{
-                                width: 100%;
-                                .bot-box{margin-top: 420px;}
+                                width: 100%; min-width: 100%;
+                                .top-box span{font-size: 20px; line-height: 28px;}
+                                .bot-box{
+                                    margin-top: 420px; 
+                                    p{width: 100%;}
+                                    h3 img{height: 18px;}
+                                }
                             }
                             .right-box{
                                 position: absolute; min-width:100%; width: 100%;  height: 100px;
@@ -226,14 +267,14 @@ $darkGray:#8E8E93;
                             .right-box{min-width: 100%; position: relative; margin-bottom: 100px;}
                         }
                         &.area3{
-                            padding-top: 80px; padding-bottom: 690px;
+                            margin-bottom: 60px;
                             .left-box{
-                                min-width: 100%; bottom: -300px;
-                                img{position: absolute; top: 479px;}
+                                min-width: 100%; bottom: -300px; top: 539px;
+                                img{position: relative;}
                             }
                             .right-box{
-                                position: relative; width:100%; min-width:100%;
-                                .bot-box{bottom: 0; margin-top: 20px; }
+                                position: relative; width:100%; min-width:100%; padding-left: 0;
+                                .bot-box{bottom: 0; padding:20px 0 40px 0;}
                             }
                         }
                     }
@@ -242,20 +283,22 @@ $darkGray:#8E8E93;
         }
         #sec8{
             .container{
-                width: 100%; padding: 80px 20px;
+                width: 100%; padding: 80px 0;
                 .wrap{
                     .bx-wrapper{background:none; border: none;box-shadow: none; margin-top: -60px;}
                     .bx-viewport{
-                        overflow:visible !important; 
+                        overflow:visible !important; width: 100%;
                     }
                     .top-area{
+                        h2{padding-left: 20px;}
                         ul.record-box{
                             width: 100%; height: 370px;
-                            padding: 20px; margin-left: 20px;
+                            padding: 20px; margin-left: 87px;
                             li{
-                                width: 100%; padding:0;
+                                &:first-child{}
+                                width: 60%; padding:15px; margin-left:-60px;
                                 div.record{
-                                    width: 280px; height: 280px; padding-bottom: 0;
+                                    width: 85%; padding-bottom: 85%;
                                     span{font-size: 16px; line-height: 160%; bottom: 70px; right: 30px;}
                                     b{font-size:32px; line-height: 38px; bottom: 30px; right: 30px;}
                                 }
@@ -263,12 +306,13 @@ $darkGray:#8E8E93;
                         }
                     }
                     .bot-area{
-                        width: 100%; flex-flow: column wrap; padding: 200px 0 80px 0;
+                        width: 100%; flex-flow: column wrap; padding: 200px 20px 80px 20px;
                         .left-box{position: relative;}
                         .right-box{
                             margin-top: 50px;
                             li{
                                 a{
+                                    &::after{right:12px;}
                                     width: 100%; font-size: 20px; padding: 0 20px;
                                     &.link1{height: 56px; line-height: 56px;}
                                     &.link2{height: 84px; line-height: 24px; padding: 16px 70px 16px 20px;} 
@@ -292,6 +336,13 @@ $darkGray:#8E8E93;
             height: 108%;
             background: url(../img/service/service_main_1.jpg) 50% 110% no-repeat;
             background-size: cover;
+            &::before{
+                content: ''; position: absolute; top: 0; left: 0;
+                transition: all 3s; z-index: 2;
+                height: 100%; width: 100%; opacity: 0;
+                background: url(../img/service/service_main_2.jpg) 50% 110% no-repeat;
+                background-size: cover;
+            }
             .title-box {
                 top: 13%; margin-top:0;
                 h2{
@@ -306,12 +357,14 @@ $darkGray:#8E8E93;
             }
         }
         #sec2 {
+            width: 100%;
             padding-top: 80px;
             .container{
                 width: 100%; padding: 20px;
                 .wrap{
+                    width: 100%;
                     .area{
-                        padding-bottom: 160px;
+                        width: 100%; padding-bottom: 160px;
                         h2{ font-size: 32px;; line-height: 38px;
                             br{display: block;}
                             i{
@@ -319,40 +372,47 @@ $darkGray:#8E8E93;
                                 &:nth-child(3){padding:0; padding-left:20px;}
                             }
                         }
-                        p{br{display: none;} padding:20px 0 40px 0;}
+                        p{br{display: block;} padding:20px 0 40px 0;}
                         &.area1{
                             width: 100%;
                             ul {
-                                left:15px;
+                                width: 100%; margin-left: 30px;
                                 li{
-                                    height: 280px; position: relative; padding: 30px 20px 10px 20px; margin-left:0;
+                                    width:75vw !important; height: 75vw; position: relative; padding: 30px 20px 10px 20px;
+                                    margin-left: 0;
                                     h3.top{
                                         position: relative; width: 100%;
                                         img{margin: 0 auto;}
                                     }
                                     .middle{
-                                        padding:50px 0;
+                                        position: absolute; top: 25%; width: 87%; text-align: center; margin-top:-57px;
                                         h2{font-size:32px; line-height: 38px;}
                                     }
-                                    a{width:240px; bottom:20px; left:20px;}
+                                    a{width:65vw; bottom:20px; left:50%; margin-left:-32.5vw;}
                                 }
                             }
                         }
                         &.area2{
                             p{br{display: block;} padding-bottom: 40px;}
-                            ul li{
-                                height:280px;
-                                h2{
-                                    bottom: 30px; right: 30px;
-                                    font-size: 26px; line-height: 31px;
-                                }
+                            ul {
+                                margin-left: 30px;
+                                li{
+                                    width: 75vw !important; height: 75vw;
+                                    h2{
+                                        bottom: 30px; right: 30px;
+                                        font-size: 26px; line-height: 31px;
+                                    }
+                            }
                             }
                         }
                         &.area3{
                             p{br{display: block;} padding-bottom: 40px;}
-                            li{
-                                height: 280px;
-                                h2{font-size:26px; line-height: 31px; bottom:30px; right:30px;}
+                            ul{
+                                margin-left:30px;
+                                li{
+                                    width: 75vw !important; height: 75vw;
+                                    h2{font-size:26px; line-height: 31px; bottom:30px; right:30px;}
+                                }
                             }
                         }
                         
@@ -363,15 +423,15 @@ $darkGray:#8E8E93;
         #modal {
             width: 100%; height: 100%; top: 0; left: 0; z-index: 999;
             .container{
-                height: 518px; width: 90%; padding: 20px;
+                height: auto; width: 90%; padding: 30px 20px 20px 20px; 
                 margin-top: calc(-518px / 2); margin-left:-45%;
                 .wrap{
-                    width:100%; height:100%; position: relative;
+                    width:100%; height:100%; position: relative; flex-flow: column wrap;
                     .left-box{
                         position: absolute; width: 100%; padding-bottom: 70%; height: auto; bottom: 0px;
                     }
                     .right-box{
-                        padding-left:0; width: 100%;
+                        padding-left:0; width: 100%; padding-bottom: 80%;
                         h4{padding: 20px 0 10px 0;}
                         p{font-size: 14px ;}
                     }
@@ -446,7 +506,7 @@ $darkGray:#8E8E93;
                         .right-box{
                             width: 100%; padding: 80px 0;
                             .text-box{
-                                h3{font-size: 32px; line-height: 38px; text-align: center;}
+                                h3{font-size: 8.5vw; line-height: 140%; text-align: center;}
                                 p{text-align: center; padding: 20px 0 40px}
                                 a{position: relative;}
                             }

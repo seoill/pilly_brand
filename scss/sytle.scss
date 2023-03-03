@@ -1,7 +1,7 @@
 @import url('./reset.css');
 
-.ani-fadeIn{animation: fadeInAni .6s both ease-in;}
-.ani-up{animation: upAni .4s both ease-in;}
+.ani-fadeIn{animation: fadeInAni .6s both ease-in-out;}
+.ani-up{animation: upAni .4s both ease-in-out;}
 .ani-up2{animation: upAni2 .6s both ease-in;}
 .ani-down{animation: upAni .4s both ease-out reverse;}
 .ani-scale{animation: scaleAni .6s both ease-in-out;}
@@ -123,7 +123,7 @@ main#aboutMain{
                     i, span {vertical-align: baseline; padding-left: 10px;}
                     i{color: $orange;}
                     span.slogan{width: 370px; display: inline-block; text-align: center; }
-                    span.plus{display: none; vertical-align: baseline;}
+                    span.plus{display: none; vertical-align: baseline; opacity:0;}
                 }
             }
         }
@@ -498,7 +498,7 @@ main#serviceMain{
                     }
                     p{@include tit_pretendard(400, 16px, $black, 160%); padding: 30px 0 50px 0;}
                     &.area1{
-                        ul{
+                        ul{position: relative;
                             display: flex; margin-left:-15px;
                             li{
                                 width: 370px; height: 360px; background: $white; position: relative;
@@ -520,6 +520,20 @@ main#serviceMain{
                         }
                     }
                     &.area2{
+                        position: relative;
+                        &::before{
+                            content: ''; display: block; position: absolute;
+                            background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(245,245,245,1) 100%);; 
+                            width: 40px; height: 450px; z-index: 10; top: 200px;
+                        }
+                        &::after{
+                            content: ''; display: block; position: absolute;
+                            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(245,245,245,1) 100%);; 
+                            width: 40px; height: 450px; z-index: 10; top: 200px; right: 0;
+                        }
+                        &.on{
+                            &::before{opacity: 0;}
+                        }
                         p{padding-bottom: 70px;}
                         li{
                             width: 360px; height: 360px; border: 1px solid $darkGray;

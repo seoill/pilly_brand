@@ -75,31 +75,28 @@
                     $('.area1-slider').bxSlider({
                         pager:false,
                         controls:false,
-                        slideMargin: 15,
+                        slideMargin: 20,
                         minSlides:1,
                         maxSlides:1,
                         moveSlides:1,
-                        slideWidth: 280,
                         infiniteLoop:false
                     });    
                     $('.area2-slider').bxSlider({
                         pager:false,
                         controls:false,
-                        slideMargin: 15,
+                        slideMargin: 20,
                         minSlides:1,
                         maxSlides:1,
                         moveSlides:1,
-                        slideWidth: 280,
                         infiniteLoop:false
                     });
                     $('.area3-slider').bxSlider({
                         pager:false,
                         controls:false,
-                        slideMargin: 15,
+                        slideMargin: 20,
                         minSlides:1,
                         maxSlides:1,
                         moveSlides:1,
-                        slideWidth: 280,
                         infiniteLoop:false
                     });
                 }
@@ -125,6 +122,13 @@
                         infiniteLoop:false
                     });
                 }
+
+                $('.area2-slider').on('mouseenter',function(){
+                    console.log($('.area2-slider').css('transform'));
+                    if($('.area2-slider').css('transform') == 'matrix(1, 0, 0, 1, 0, 0)'){
+                        $(this).addClass('on');
+                    }
+                });
             });
         }
         modal(){
@@ -173,7 +177,7 @@
                 $('#modal .left-box').removeClass('img2');
                 $('#modal .left-box').removeClass('img3');
             });
-        }
+        }        
     }
     const newService = new service();
     newService.init();
@@ -186,6 +190,7 @@ const v = document.getElementById('viewer');
 
 function touch(){
     v.style.overflowY = 'scroll';
+                        $('#sec1').addClass('on');
     $('.title-box h2').eq(0).addClass('ani-fadeIn');
     $('.title-box h2').eq(1).addClass('ani-fadeIn');
     $('.text-box').addClass('ani-up2');
