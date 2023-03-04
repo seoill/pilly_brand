@@ -1,9 +1,11 @@
 (($)=>{
+    const mobPoint = 600;
     class service{
         init(){
             this.scroll();
             this.slider();
             this.modal();
+            this.topBtn();
         }
         scroll(){
             const view = $('#viewer');
@@ -36,6 +38,9 @@
                             case 3 :
                                 view.addClass('on');
                                 view.css({'overflow-y':'scroll'});
+                                if($(window).width()>mobPoint){
+                                    $('#floatTop').slideDown(400);
+                                }
                                 break;
                         }
                     }
@@ -70,7 +75,7 @@
             });
         }
         slider(){
-            $(document).ready(function(){
+            $(document).ready(function(){// slider 자체 설정
                 if($(window).width()<750){
                     $('.area1-slider').bxSlider({
                         pager:false,
@@ -122,13 +127,56 @@
                         infiniteLoop:false
                     });
                 }
+            });
 
-                $('.area2-slider').on('mouseenter',function(){
-                    console.log($('.area2-slider').css('transform'));
-                    if($('.area2-slider').css('transform') == 'matrix(1, 0, 0, 1, 0, 0)'){
-                        $(this).addClass('on');
-                    }
-                });
+            //gradient 설정
+            const slider2 = document.querySelector('.area2-slider');
+            $('.area2-slider').on('mouseenter',function(){
+                let left = slider2.getBoundingClientRect().left;
+                // console.log('left : '+left);
+                if(left>=360){ //왼쪽에 닿음
+                    // console.log('left-over');
+                    $('#sec2 .area2').removeClass('middle');
+                    $('#sec2 .area2').removeClass('right');
+                    $('#sec2 .area2').addClass('left');
+                    return;
+                }
+                if(left<=35){ //오른쪽에 닿음
+                    // console.log('right-over');
+                    $('#sec2 .area2').removeClass('left');
+                    $('#sec2 .area2').removeClass('middle');
+                    $('#sec2 .area2').addClass('right');
+                    return;
+                }
+                if(left<360){//중간
+                    $('#sec2 .area2').removeClass('left');
+                    $('#sec2 .area2').removeClass('right');
+                    $('#sec2 .area2').addClass('middle');
+                }
+            });
+            const slider3 = document.querySelector('.area3-slider');
+            $('.area3-slider').on('mouseenter',function(){
+                let left = slider3.getBoundingClientRect().left;
+                // console.log('left : '+left);
+                if(left>=360){ //왼쪽에 닿음
+                    // console.log('left-over');
+                    $('#sec2 .area3').removeClass('middle');
+                    $('#sec2 .area3').removeClass('right');
+                    $('#sec2 .area3').addClass('left');
+                    return;
+                }
+                if(left<=35){ //오른쪽에 닿음
+                    // console.log('right-over');
+                    $('#sec2 .area3').removeClass('left');
+                    $('#sec2 .area3').removeClass('middle');
+                    $('#sec2 .area3').addClass('right');
+                    return;
+                }
+                if(left<360){//중간
+                    $('#sec2 .area3').removeClass('left');
+                    $('#sec2 .area3').removeClass('right');
+                    $('#sec2 .area3').addClass('middle');
+                }
             });
         }
         modal(){
@@ -177,7 +225,18 @@
                 $('#modal .left-box').removeClass('img2');
                 $('#modal .left-box').removeClass('img3');
             });
-        }        
+        }      
+        topBtn(){
+            $(document).ready(function(){
+                if($(window).width()<mobPoint){
+                    $('#floatTop').hide();
+                }
+                $('.top-btn').on('click',function(e){
+                    $('#viewer').animate({scrollTop:0},300);
+                    // location.reload();  
+                });
+            });
+        }
     }
     const newService = new service();
     newService.init();

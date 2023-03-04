@@ -94,9 +94,10 @@ $darkGray:#8E8E93;
                         position: absolute; bottom: 20px;
                     }
                     h2{
-                        font-size: 12vw; line-height: 50px;
+                        font-size: 11.5vw; line-height: 160%;
                         i,span{padding: none;}
-                        span.slogan{width: 75vw;}
+                        span.slogan{width: 70%;}
+                        span.plus{display: none; vertical-align: baseline; opacity:0; position: relative;}
                     }
                 }
             }
@@ -230,6 +231,7 @@ $darkGray:#8E8E93;
             width: 100%;
             .container{
                 width:100%; padding: 80px 20px;
+                padding-bottom: 145px;
                 .wrap{
                     width: 100%;
                     position: relative;
@@ -238,7 +240,7 @@ $darkGray:#8E8E93;
                         display: block;
                         img{width: 100%;}
                         h2{font-size:32px; line-height: 36px;}
-                        p{width: 100%; font-size: 14px;}
+                        p{width: 100%; font-size: 4vw;}
                         .top-box, .bot-box{position: relative;}
                         &.area1{ 
                             position: relative; margin-bottom: 160px; width: 100%;
@@ -259,15 +261,17 @@ $darkGray:#8E8E93;
                             }
                         }
                         &.area2{
+                            margin-bottom: 330px;
                             .left-box{
                                 min-width:100%; width: 100%;
                                 h2{padding-bottom: 20px;}
                                 .bot-box{padding-bottom: 40px;}
                             }
-                            .right-box{min-width: 100%; position: relative; margin-bottom: 100px;}
+                            .right-box{min-width: 100%; position: relative;}
                         }
                         &.area3{
                             margin-bottom: 60px;
+                            padding-bottom: 80px;;
                             .left-box{
                                 min-width: 100%; bottom: -300px; top: 539px;
                                 img{position: relative;}
@@ -346,7 +350,7 @@ $darkGray:#8E8E93;
             .title-box {
                 top: 13%; margin-top:0;
                 h2{
-                    font-size:56px; line-height:64px; 
+                    font-size:48px; line-height:58px; 
                     // color: $orange;
                     // &:nth-child(2){color:$orange;}
                 }
@@ -372,7 +376,7 @@ $darkGray:#8E8E93;
                                 &:nth-child(3){padding:0; padding-left:20px;}
                             }
                         }
-                        p{br{display: block;} padding:20px 0 40px 0;}
+                        p{br{display: block;} padding:20px 0 40px 0; line-height: 170%; font-size: 4vw;}
                         &.area1{
                             width: 100%;
                             ul {
@@ -415,7 +419,11 @@ $darkGray:#8E8E93;
                                 }
                             }
                         }
-                        
+                        &::before{display: none; opacity: 0;}
+                        &::after{display: none; opacity: 0;}
+                        &.left{&::before{display: none; opacity: 0;}&::after{display: none; opacity: 0;}}
+                        &.right{&::before{display: none; opacity: 0;}&::after{display: none; opacity: 0;}}
+                        &.middle{&::before{display: none; opacity: 0;}&::after{display: none; opacity: 0;}}
                     }
                 }
             }
@@ -473,8 +481,9 @@ $darkGray:#8E8E93;
                             .left-box{padding-bottom:40px; p {width: 100%;}} 
                         }
                         &.area2{
-                            margin-bottom: 280px;
-                            .left-box{position: absolute; bottom: -35%;}
+                            margin-bottom: 0;
+                            .right-box{padding-bottom:40px;}
+                            .left-box{position: relative; }
                         }
                         &.area3{
                             .left-box{

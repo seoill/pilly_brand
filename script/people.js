@@ -1,9 +1,11 @@
 (($)=>{
+    const mobPoint = 600;
     const dom = '<li><div class="people-card-wrap"></div></li>';
     class people {
         init(){  
             this.scroll();
             this.randomArray();
+            this.topBtn();
         }
         scroll(){
             const view = $('#viewer');
@@ -35,6 +37,9 @@
                             case 3:
                                 view.addClass('on');
                                 view.css({'overflow-y':'scroll'});
+                                if($(window).width()>mobPoint){
+                                    $('#floatTop').slideDown(400);
+                                }
                                 break;
                         }
                     }
@@ -90,6 +95,17 @@
                 $('.card-area ul').append(dom);
                     $('.people-card-wrap').eq(i).css('background-image', "url("+url+")");
             }
+        }
+        topBtn(){
+            $(document).ready(function(){
+                if($(window).width()<mobPoint){
+                    $('#floatTop').hide();
+                }
+                $('.top-btn').on('click',function(e){
+                    $('#viewer').animate({scrollTop:0},300);
+                    // location.reload();  
+                });
+            });
         }
     }
     const newPeople = new people();
